@@ -22,6 +22,7 @@ on:
     paths:
       - "paper_inputs/**/*.txt"
       - "scripts/render_paper_caption_video.py"
+      - "remotion-composer/**"
       - ".github/workflows/render-paper-caption-video.yml"
 
 jobs:
@@ -37,6 +38,8 @@ jobs:
           sudo apt-get install -y ffmpeg fonts-dejavu-core
           python -m pip install --upgrade pip
           python -m pip install pillow
+          cd remotion-composer
+          npm ci
 
       - name: Resolve workflow inputs
         id: inputs
@@ -132,4 +135,5 @@ jobs:
           path: |
             projects/${{ steps.inputs.outputs.project_id }}/renders/final.mp4
             projects/${{ steps.inputs.outputs.project_id }}/artifacts/story.json
+            projects/${{ steps.inputs.outputs.project_id }}/artifacts/remotion-props.json
           if-no-files-found: error

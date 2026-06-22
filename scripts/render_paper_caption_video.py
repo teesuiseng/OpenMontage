@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """Render a caption-led paper explainer from a .txt file.
 
-The script is intentionally dependency-light for GitHub Actions:
+The script stays API-free for GitHub Actions:
 - reads a committed text file
 - extracts heuristic paper beats
-- renders frames with Pillow
-- pipes PNG frames into ffmpeg
+- maps the extracted story into Remotion Explainer props
+- renders the MP4 with the existing Remotion composer
 - writes an MP4 that the workflow uploads as an artifact
 """
 
@@ -404,48 +404,146 @@ def make_frame(frame: int, story: dict, f: dict[str, ImageFont.FreeTypeFont], fp
     return image
 
 
+def split_comparison_body(body: str) -> tuple[str, str] | None:
+    parts = [part.strip() for part in body.split("•") if part.strip()]
+    glucose = next((part for part in parts if "glucose" in part.lower()), None)
+    fructose = next((part for part in parts if "fructose" in part.lower()), None)
+    if glucose and fructose and glucose != fructose:
+        return glucose, fructose
+    return None
+
+
+def remotion_cut_for_scene(scene: dict) -> dict:
+    base = {
+        "id": f"{scene['kind']}-{scene['start']}",
+        "source": "",
+        "in_seconds": scene["start"],
+        "out_seconds": scene["end"],
+    }
+    kind = scene["kind"]
+    heading = scene["heading"]
+    body = scene["body"]
+
+    if kind == "title":
+        return {
+            **base,
+            "type": "hero_title",
+            "text": body,
+            "heroSubtitle": "caption-led research brief",
+        }
+    if kind == "setup":
+        return {
+            **base,
+            "type": "callout",
+            "callout_type": "info",
+            "title": heading,
+            "text": body,
+        }
+    if kind == "finding":
+        comparison = split_comparison_body(body)
+        if comparison:
+            return {
+                **base,
+                "type": "comparison",
+                "title": heading,
+                "leftLabel": "Glucose condition",
+                "leftValue": comparison[0],
+                "rightLabel": "Fructose condition",
+                "rightValue": comparison[1],
+            }
+        return {
+            **base,
+            "type": "callout",
+            "callout_type": "tip",
+            "title": heading,
+            "text": body,
+        }
+    if kind == "limitations":
+        return {
+            **base,
+            "type": "callout",
+            "callout_type": "warning",
+            "title": heading,
+            "text": body,
+        }
+    return {
+        **base,
+        "type": "text_card",
+        "text": f"{heading}\n\n{body}",
+        "fontSize": 58 if kind == "takeaway" else 52,
+    }
+
+
+def build_remotion_props(story: dict) -> dict:
+    return {
+        "theme": "clean-professional",
+        "cuts": [remotion_cut_for_scene(scene) for scene in story["scenes"]],
+        "overlays": [
+            {
+                "type": "section_title",
+                "text": "OpenMontage paper brief",
+                "subtitle": "Auto-extracted from committed .txt",
+                "in_seconds": 0,
+                "out_seconds": story["duration_seconds"],
+                "position": "top-left",
+                "accentColor": "#2563EB",
+            }
+        ],
+        "captions": [],
+        "audio": {},
+    }
+
+
 def render_video(story: dict, output: Path, ffmpeg: str, fps: int) -> dict:
     output.parent.mkdir(parents=True, exist_ok=True)
-    total_frames = int(story["duration_seconds"] * fps)
+    repo = Path.cwd()
+    composer_dir = repo / "remotion-composer"
+    if not composer_dir.exists():
+        raise FileNotFoundError(f"Missing Remotion composer directory: {composer_dir}")
+    if not (composer_dir / "node_modules").exists():
+        raise RuntimeError(
+            "Remotion dependencies are not installed. Run `cd remotion-composer && npm ci` before rendering."
+        )
+
+    props_path = output.parent.parent / "artifacts" / "remotion-props.json"
+    props_path.parent.mkdir(parents=True, exist_ok=True)
+    props_path.write_text(json.dumps(build_remotion_props(story), indent=2), encoding="utf-8")
+
+    remotion_bin = composer_dir / "node_modules" / ".bin" / "remotion"
+    if not remotion_bin.exists():
+        raise FileNotFoundError(f"Missing Remotion CLI: {remotion_bin}")
+
     cmd = [
-        ffmpeg,
-        "-y",
-        "-f",
-        "image2pipe",
-        "-vcodec",
-        "png",
-        "-r",
-        str(fps),
-        "-i",
-        "-",
-        "-an",
-        "-c:v",
-        "libx264",
-        "-pix_fmt",
-        "yuv420p",
-        "-movflags",
-        "+faststart",
+        str(remotion_bin),
+        "render",
+        "src/index.tsx",
+        "Explainer",
         str(output),
+        f"--props={props_path}",
+        "--codec",
+        "h264",
+        "--overwrite",
     ]
-    f = fonts()
+    browser_executable = (
+        shutil.which("google-chrome")
+        or shutil.which("google-chrome-stable")
+        or shutil.which("chromium")
+        or shutil.which("chromium-browser")
+    )
+    if browser_executable:
+        cmd.extend(["--browser-executable", browser_executable])
     start = time.time()
-    proc = subprocess.Popen(cmd, stdin=subprocess.PIPE, stderr=subprocess.PIPE)
-    assert proc.stdin is not None
-    for frame in range(total_frames):
-        image = make_frame(frame, story, f, fps)
-        buffer = io.BytesIO()
-        image.save(buffer, format="PNG")
-        proc.stdin.write(buffer.getvalue())
-    proc.stdin.close()
-    stderr = proc.stderr.read().decode("utf-8", "replace") if proc.stderr else ""
-    returncode = proc.wait()
-    if returncode:
-        raise RuntimeError(f"ffmpeg failed with exit code {returncode}\n{stderr[-4000:]}")
+    proc = subprocess.run(cmd, cwd=composer_dir, text=True, capture_output=True)
+    if proc.returncode:
+        raise RuntimeError(f"Remotion render failed with exit code {proc.returncode}\n{(proc.stderr or proc.stdout)[-4000:]}")
     return {
         "path": output.as_posix(),
         "format": "mp4",
         "codec": "h264",
-        "resolution": f"{W}x{H}",
+        "renderer": "remotion",
+        "composition": "Explainer",
+        "props_path": props_path.as_posix(),
+        "resolution": "1920x1080",
         "fps": fps,
         "duration_seconds": story["duration_seconds"],
         "file_size_bytes": output.stat().st_size,
