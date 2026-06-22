@@ -3,11 +3,11 @@
   "project_id": "khk-er-proteostasis-paper",
   "pipeline_type": "animated-explainer",
   "stage": "script",
-  "status": "awaiting_human",
+  "status": "completed",
   "timestamp": "2026-06-22T13:17:31.413954+00:00",
   "checkpoint_policy": "guided",
   "human_approval_required": true,
-  "human_approved": false,
+  "human_approved": true,
   "artifacts": {
     "script": {
       "version": "1.0",
@@ -192,7 +192,8 @@
         "word_count": 141,
         "estimated_pace_wpm": 134.3,
         "source_doi": "10.1152/ajpgi.00235.2025",
-        "approval_source": "User said: Approve Concept 1 with Remotion"
+        "approval_source": "User said: Approve Concept 1 with Remotion",
+        "script_approval": "User approved script; scene planning started."
       }
     }
   },
@@ -215,7 +216,7 @@
       "nitpicks": 0,
       "word_count": 141,
       "estimated_pace_wpm": 134.3,
-      "success_criteria_met": "Script covers approved key points, includes 7 enhancement cues, and stays within approximately 10% of the 60-second target."
+      "success_criteria_met": "Script approved by user; scene plan stage started."
     }
   },
   "cost_snapshot": {
@@ -224,6 +225,6 @@
     "budget_cap_usd": 0
   },
   "metadata": {
-    "awaiting": "script approval before scene_plan"
+    "approved": "script approved; scene plan stage started"
   }
 }
