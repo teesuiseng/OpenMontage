@@ -1,0 +1,331 @@
+{
+  "version": "1.0",
+  "project_id": "khk-er-proteostasis-paper",
+  "pipeline_type": "animated-explainer",
+  "stage": "scene_plan",
+  "status": "completed",
+  "timestamp": "2026-06-22T14:41:43.648907+00:00",
+  "checkpoint_policy": "guided",
+  "human_approval_required": false,
+  "human_approved": true,
+  "artifacts": {
+    "scene_plan": {
+      "version": "1.0",
+      "style_playbook": "clean-professional",
+      "scenes": [
+        {
+          "id": "scene-01",
+          "type": "text_card",
+          "description": "Hero title introduces the paradox: KHK is one enzyme with two jobs, using a clean blue-white scientific title treatment.",
+          "start_seconds": 0,
+          "end_seconds": 8,
+          "script_section_id": "s1",
+          "framing": "Centered hero title with molecule and hepatocyte labels implied through typography and icon-like text badges.",
+          "movement": "Fade-up title, subtle scale-in, two supporting labels slide in from opposite sides.",
+          "transition_in": "fade",
+          "transition_out": "dissolve",
+          "overlay_notes": "Title: KHK: one enzyme, two jobs. Lower note: fructose metabolism + stress adaptation.",
+          "shot_language": {
+            "shot_size": "establishing",
+            "camera_movement": "static",
+            "lens_mm": 50,
+            "lighting_key": "high_key",
+            "depth_of_field": "deep",
+            "color_temperature": "neutral"
+          },
+          "shot_intent": "Stop the scroll with the paper's paradox before introducing pathway details.",
+          "narrative_role": "introduce_subject",
+          "information_role": "Viewer learns KHK will be framed as both metabolic and protective.",
+          "hero_moment": false,
+          "texture_keywords": [
+            "clean",
+            "flat",
+            "scientific",
+            "white-space"
+          ],
+          "required_assets": [
+            {
+              "type": "remotion_component",
+              "description": "HeroTitle cut rendered with Remotion; no external media required.",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "scene-02",
+          "type": "diagram",
+          "description": "Nutrient-overload pathway diagram: fructose plus saturated fat enter hepatocyte and create ER folding backlog.",
+          "start_seconds": 8,
+          "end_seconds": 18,
+          "script_section_id": "s2",
+          "framing": "Full-screen process diagram with three rounded nodes arranged left-to-right.",
+          "movement": "Nodes appear progressively: nutrients, ER overload, adapt-or-die fork.",
+          "transition_in": "fade",
+          "transition_out": "slide-left",
+          "overlay_notes": "Key term card: ER proteostasis = keeping protein folding under control.",
+          "shot_language": {
+            "shot_size": "wide",
+            "camera_movement": "pan_right",
+            "lens_mm": 50,
+            "lighting_key": "high_key",
+            "depth_of_field": "deep",
+            "color_temperature": "neutral"
+          },
+          "shot_intent": "Translate dense ER-stress terminology into a simple decision pathway.",
+          "narrative_role": "establish_context",
+          "information_role": "Viewer learns why nutrient stress creates a cell-fate problem.",
+          "hero_moment": false,
+          "texture_keywords": [
+            "clean lines",
+            "rounded nodes",
+            "blue accent"
+          ],
+          "required_assets": [
+            {
+              "type": "remotion_diagram",
+              "description": "Progress-bar/diagram cut representing nutrient overload to ER backlog to cell-fate fork.",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "scene-03",
+          "type": "animation",
+          "description": "Split-screen comparison of KHK present versus KHK knockdown: adaptive UPR on the left, proteotoxic/apoptotic stress on the right.",
+          "start_seconds": 18,
+          "end_seconds": 33,
+          "script_section_id": "s3",
+          "framing": "Two-column comparison with strong left/right contrast and clear labels.",
+          "movement": "Left side fills blue for adaptive branch, then right side fills amber/red for aggregate/apoptosis branch.",
+          "transition_in": "dissolve",
+          "transition_out": "dissolve",
+          "overlay_notes": "Contrast card: KHK present: adaptive UPR; KHK loss: proteotoxic stress.",
+          "shot_language": {
+            "shot_size": "medium_wide",
+            "camera_movement": "static",
+            "lens_mm": 50,
+            "lighting_key": "high_key",
+            "depth_of_field": "deep",
+            "color_temperature": "neutral"
+          },
+          "shot_intent": "Make the central experimental contrast legible in one visual beat.",
+          "narrative_role": "comparison",
+          "information_role": "Viewer learns the core finding: KHK presence changes the stress-signaling outcome.",
+          "hero_moment": true,
+          "texture_keywords": [
+            "split-screen",
+            "blue amber contrast",
+            "scientific labels"
+          ],
+          "required_assets": [
+            {
+              "type": "remotion_component",
+              "description": "ComparisonCard cut contrasting adaptive IRE1\u03b1/XBP1 with proteotoxic/apoptotic stress.",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "scene-04",
+          "type": "diagram",
+          "description": "Central aha diagram showing metabolism and ER proteostasis intersecting at KHK.",
+          "start_seconds": 33,
+          "end_seconds": 46,
+          "script_section_id": "s4",
+          "framing": "Centered Venn/intersection-style layout with KHK as the connecting node.",
+          "movement": "Two streams converge into KHK, then a protective ER proteostasis label pulses once.",
+          "transition_in": "fade",
+          "transition_out": "dissolve",
+          "overlay_notes": "Aha card: Metabolism \u2194 ER stress adaptation.",
+          "shot_language": {
+            "shot_size": "medium",
+            "camera_movement": "zoom_in",
+            "lens_mm": 50,
+            "lighting_key": "high_key",
+            "depth_of_field": "deep",
+            "color_temperature": "neutral"
+          },
+          "shot_intent": "Deliver the conceptual payoff of the video in a single memorable diagram.",
+          "narrative_role": "resolution",
+          "information_role": "Viewer learns the paper reframes KHK as a bridge between metabolism and proteostasis.",
+          "hero_moment": true,
+          "texture_keywords": [
+            "intersection",
+            "clean diagram",
+            "polished"
+          ],
+          "required_assets": [
+            {
+              "type": "remotion_component",
+              "description": "Callout and progress visuals showing metabolism and proteostasis meeting at KHK.",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "scene-05",
+          "type": "animation",
+          "description": "Therapeutic balance: reducing harmful fructose flux must be balanced against preserving ER protection.",
+          "start_seconds": 46,
+          "end_seconds": 56,
+          "script_section_id": "s5",
+          "framing": "Two-sided balance board with left and right therapeutic considerations.",
+          "movement": "Scale settles into balance; warning chip appears for complete deletion.",
+          "transition_in": "slide-left",
+          "transition_out": "fade",
+          "overlay_notes": "Text: Blocking flux \u2260 deleting KHK.",
+          "shot_language": {
+            "shot_size": "medium_wide",
+            "camera_movement": "static",
+            "lens_mm": 50,
+            "lighting_key": "high_key",
+            "depth_of_field": "deep",
+            "color_temperature": "neutral"
+          },
+          "shot_intent": "Turn the biological finding into the translational takeaway.",
+          "narrative_role": "deliver_payload",
+          "information_role": "Viewer learns the therapeutic nuance: selective inhibition may matter.",
+          "hero_moment": false,
+          "texture_keywords": [
+            "balance",
+            "clinical nuance",
+            "blue amber"
+          ],
+          "required_assets": [
+            {
+              "type": "remotion_component",
+              "description": "Comparison/progress cut showing reduce fructose flux versus preserve ER protection.",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "scene-06",
+          "type": "text_card",
+          "description": "CTA end card with DOI and a concise summary message.",
+          "start_seconds": 56,
+          "end_seconds": 60,
+          "script_section_id": "s5",
+          "framing": "Centered DOI and concise final message with generous whitespace.",
+          "movement": "CTA fades in, DOI underlines with accent color.",
+          "transition_in": "fade",
+          "transition_out": "fade",
+          "overlay_notes": "Read the article: doi.org/10.1152/ajpgi.00235.2025.",
+          "shot_language": {
+            "shot_size": "medium",
+            "camera_movement": "static",
+            "lens_mm": 50,
+            "lighting_key": "high_key",
+            "depth_of_field": "deep",
+            "color_temperature": "neutral"
+          },
+          "shot_intent": "End with an exact, readable call to action.",
+          "narrative_role": "call_to_action",
+          "information_role": "Viewer knows where to find the paper.",
+          "hero_moment": false,
+          "texture_keywords": [
+            "minimal",
+            "readable",
+            "CTA"
+          ],
+          "required_assets": [
+            {
+              "type": "remotion_component",
+              "description": "TextCard CTA rendered exactly in Remotion.",
+              "source": "generate"
+            }
+          ]
+        }
+      ],
+      "metadata": {
+        "project_id": "khk-er-proteostasis-paper",
+        "pipeline_type": "animated-explainer",
+        "render_runtime": "remotion",
+        "auto_advanced_reason": "User requested making the video without additional human-in-loop steps.",
+        "target_duration_seconds": 60,
+        "slideshow_risk_score": {
+          "average": 0.17,
+          "verdict": "strong",
+          "dimensions": {
+            "repetition": {
+              "score": 0.0,
+              "reason": "Good variety"
+            },
+            "decorative_visuals": {
+              "score": 0.0,
+              "reason": "Most scenes have clear communicative purpose"
+            },
+            "weak_motion": {
+              "score": 0.0,
+              "reason": "Camera movement appears purposeful"
+            },
+            "weak_shot_intent": {
+              "score": 0.0,
+              "reason": "Strong shot intent coverage"
+            },
+            "typography_overreliance": {
+              "score": 1.0,
+              "reason": "Balanced text and visual content"
+            },
+            "unsupported_cinematic_claims": {
+              "score": 0.0,
+              "reason": "Not claiming cinematic treatment"
+            }
+          },
+          "render_runtime": "remotion"
+        }
+      }
+    }
+  },
+  "style_playbook": "clean-professional",
+  "review": {
+    "stage": "scene_plan",
+    "round": 1,
+    "decision": "PASS",
+    "findings": [],
+    "summary": {
+      "critical": 0,
+      "suggestions": 0,
+      "slideshow_risk": {
+        "average": 0.17,
+        "verdict": "strong",
+        "dimensions": {
+          "repetition": {
+            "score": 0.0,
+            "reason": "Good variety"
+          },
+          "decorative_visuals": {
+            "score": 0.0,
+            "reason": "Most scenes have clear communicative purpose"
+          },
+          "weak_motion": {
+            "score": 0.0,
+            "reason": "Camera movement appears purposeful"
+          },
+          "weak_shot_intent": {
+            "score": 0.0,
+            "reason": "Strong shot intent coverage"
+          },
+          "typography_overreliance": {
+            "score": 1.0,
+            "reason": "Balanced text and visual content"
+          },
+          "unsupported_cinematic_claims": {
+            "score": 0.0,
+            "reason": "Not claiming cinematic treatment"
+          }
+        },
+        "render_runtime": "remotion"
+      },
+      "success_criteria_met": "2/2"
+    }
+  },
+  "cost_snapshot": {
+    "spent_usd": 0,
+    "stage_estimated_usd": 0,
+    "budget_cap_usd": 2.0
+  },
+  "metadata": {
+    "auto_advanced": true
+  }
+}

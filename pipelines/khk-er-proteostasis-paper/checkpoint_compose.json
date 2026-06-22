@@ -1,0 +1,290 @@
+{
+  "version": "1.0",
+  "project_id": "khk-er-proteostasis-paper",
+  "pipeline_type": "animated-explainer",
+  "stage": "compose",
+  "status": "completed",
+  "timestamp": "2026-06-22T14:47:24.517888+00:00",
+  "checkpoint_policy": "guided",
+  "human_approval_required": false,
+  "human_approved": true,
+  "artifacts": {
+    "render_report": {
+      "version": "1.0",
+      "outputs": [
+        {
+          "path": "projects/khk-er-proteostasis-paper/renders/final.mp4",
+          "format": "mp4",
+          "codec": "h264",
+          "resolution": "1280x720",
+          "fps": 30,
+          "duration_seconds": 60,
+          "file_size_bytes": 1313453,
+          "platform_target": "linkedin"
+        }
+      ],
+      "render_time_seconds": 103.93,
+      "warnings": [
+        "Primary Remotion render was blocked: no local Chrome/Chromium and DNS could not resolve remotion.media. Used local bundled FFmpeg frame-render fallback to produce MP4.",
+        "Caption-led video has no audio track because no TTS provider was configured in the approved proposal."
+      ],
+      "verification_notes": [
+        "Bundled ffmpeg probe reports valid MP4 container, H.264 video, 1280x720, 30 fps, duration 00:01:00.00.",
+        "Four review frames were sampled from opening, middle, climax, and ending."
+      ],
+      "render_grammar": "explainer-data",
+      "slideshow_risk_score": {
+        "average": 2.08,
+        "verdict": "acceptable"
+      },
+      "decision_log_ref": "pipelines/khk-er-proteostasis-paper/decision_log.json",
+      "final_review_ref": "inline:final_review",
+      "metadata": {
+        "project_id": "khk-er-proteostasis-paper",
+        "requested_no_human_loop": true,
+        "primary_runtime": "remotion",
+        "actual_encoder": "bundled Remotion compositor FFmpeg",
+        "raw_render_report": "projects/khk-er-proteostasis-paper/artifacts/local_render_report_raw.json",
+        "original_workspace_output": "projects/khk-er-proteostasis-paper/renders/final.mp4",
+        "binary_commit_policy": "MP4 is generated locally and intentionally not committed because binary PR diffs are unsupported in the Codex/GitHub flow.",
+        "github_delivery": "Render KHK video workflow uploads khk-er-proteostasis-paper-final-video artifact."
+      }
+    },
+    "final_review": {
+      "version": "1.0",
+      "output_path": "projects/khk-er-proteostasis-paper/renders/final.mp4",
+      "status": "pass",
+      "checks": {
+        "technical_probe": {
+          "valid_container": true,
+          "duration_seconds": 60,
+          "resolution": "1280x720",
+          "fps": 30,
+          "has_audio": false,
+          "codec": "h264",
+          "file_size_bytes": 1313453,
+          "issues": []
+        },
+        "visual_spotcheck": {
+          "frames_sampled": 4,
+          "frame_paths": [
+            "projects/khk-er-proteostasis-paper/renders/review_frames/frame_00s.png",
+            "projects/khk-er-proteostasis-paper/renders/review_frames/frame_20s.png",
+            "projects/khk-er-proteostasis-paper/renders/review_frames/frame_40s.png",
+            "projects/khk-er-proteostasis-paper/renders/review_frames/frame_59s.png"
+          ],
+          "black_frames_detected": false,
+          "broken_overlays": false,
+          "missing_assets": false,
+          "unreadable_text": false,
+          "issues": []
+        },
+        "audio_spotcheck": {
+          "narration_present": false,
+          "music_present": false,
+          "unexpected_silence": false,
+          "clipping_detected": false,
+          "mix_intelligible": true,
+          "issues": [
+            "No audio track by design: caption-led fallback because no configured TTS provider was available in the approved proposal."
+          ]
+        },
+        "promise_preservation": {
+          "delivery_promise_honored": true,
+          "renderer_family_used": "explainer-data",
+          "render_runtime_used": "ffmpeg",
+          "runtime_swap_detected": true,
+          "runtime_swap_check": "ok \u2014 Remotion execution was blocked by missing Chrome and DNS failure; fallback was logged as d-004 and used only to satisfy the user request to make the video without more approvals.",
+          "motion_ratio_actual": 1.0,
+          "silent_downgrade_detected": false,
+          "issues": []
+        },
+        "subtitle_check": {
+          "subtitles_expected": true,
+          "subtitles_present": true,
+          "coverage_ratio": 1.0,
+          "timing_drift_detected": false,
+          "issues": []
+        },
+        "transcript_comparison": {
+          "transcript_matches_script": true,
+          "word_accuracy": 1.0,
+          "issues": [
+            "Caption text is derived directly from the approved script; no audio transcript was generated."
+          ]
+        }
+      },
+      "issues_found": [
+        "No audio track; this is a caption-led video because TTS was unavailable in the approved production plan.",
+        "Render engine fallback from Remotion execution to local FFmpeg frame encoding was required by environment limitations and logged in decision d-004."
+      ],
+      "recommended_action": "present_to_user",
+      "metadata": {
+        "project_id": "khk-er-proteostasis-paper",
+        "reviewed_at": "2026-06-22T14:47:00+00:00",
+        "original_workspace_output": "projects/khk-er-proteostasis-paper/renders/final.mp4",
+        "binary_commit_policy": "MP4 is generated locally and intentionally not committed because binary PR diffs are unsupported in the Codex/GitHub flow.",
+        "github_delivery": "Render KHK video workflow uploads khk-er-proteostasis-paper-final-video artifact."
+      }
+    },
+    "decision_log": {
+      "version": "1.0",
+      "project_id": "khk-er-proteostasis-paper",
+      "decisions": [
+        {
+          "decision_id": "d-001",
+          "stage": "proposal",
+          "category": "pipeline_selection",
+          "subject": "Video production pipeline",
+          "options_considered": [
+            {
+              "option_id": "animated-explainer",
+              "label": "Animated explainer",
+              "score": 0.9,
+              "reason": "Best fit for turning a scientific paper into diagrams, captions, and concise narration."
+            },
+            {
+              "option_id": "cinematic",
+              "label": "Cinematic trailer",
+              "score": 0.35,
+              "reason": "Would need configured video generation and is less precise for pathway science."
+            },
+            {
+              "option_id": "avatar-spokesperson",
+              "label": "Avatar spokesperson",
+              "score": 0.3,
+              "reason": "Would require avatar/TTS tooling that is unavailable."
+            }
+          ],
+          "selected": "animated-explainer",
+          "reason": "Paper announcement needs accuracy and pathway clarity more than cinematic footage.",
+          "user_visible": true,
+          "user_approved": true,
+          "confidence": 0.9
+        },
+        {
+          "decision_id": "d-002",
+          "stage": "proposal",
+          "category": "render_runtime_selection",
+          "subject": "Render runtime",
+          "options_considered": [
+            {
+              "option_id": "remotion",
+              "label": "Remotion",
+              "score": 0.85,
+              "reason": "Available and strong for React-based scientific scene cards, captions, and diagrams."
+            },
+            {
+              "option_id": "hyperframes",
+              "label": "HyperFrames",
+              "score": 0.2,
+              "reason": "Could be strong for kinetic typography but is unavailable in this environment.",
+              "rejected_because": "runtime not available on this machine"
+            },
+            {
+              "option_id": "ffmpeg",
+              "label": "FFmpeg-only",
+              "score": 0.35,
+              "reason": "Useful for simple stitching but weaker for custom motion-graphics pathway animation."
+            }
+          ],
+          "selected": "remotion",
+          "reason": "Recommended pending user approval because it is available and fits the data-explainer grammar.",
+          "user_visible": true,
+          "user_approved": true,
+          "confidence": 0.85
+        },
+        {
+          "decision_id": "d-003",
+          "stage": "proposal",
+          "category": "concept_selection",
+          "subject": "Recommended concept",
+          "options_considered": [
+            {
+              "option_id": "c1",
+              "label": "The Enzyme With Two Jobs",
+              "score": 0.9,
+              "reason": "Most balanced and surprising for a quick paper announcement."
+            },
+            {
+              "option_id": "c2",
+              "label": "A Liver Cell\u2019s Stress Switch",
+              "score": 0.78,
+              "reason": "Most accessible for general audiences but slightly less focused on novelty."
+            },
+            {
+              "option_id": "c3",
+              "label": "Why Blocking Isn\u2019t Deleting",
+              "score": 0.82,
+              "reason": "Best translational angle but narrower audience."
+            }
+          ],
+          "selected": "c1",
+          "reason": "Recommended pending user approval for widest high-quality impact.",
+          "user_visible": true,
+          "user_approved": true,
+          "confidence": 0.88
+        },
+        {
+          "decision_id": "d-004",
+          "stage": "compose",
+          "category": "fallback_decision",
+          "subject": "Render execution after Remotion browser download failed",
+          "options_considered": [
+            {
+              "option_id": "remotion-render",
+              "label": "Remotion render",
+              "score": 0.85,
+              "reason": "Approved runtime, but blocked because no local Chrome/Chromium exists and DNS could not resolve remotion.media to download headless Chrome."
+            },
+            {
+              "option_id": "local-ffmpeg-frame-render",
+              "label": "Local FFmpeg frame render",
+              "score": 0.7,
+              "reason": "Available through bundled Remotion compositor FFmpeg and can produce the requested video without paid providers or more approval steps."
+            }
+          ],
+          "selected": "local-ffmpeg-frame-render",
+          "reason": "User explicitly requested making the video without additional human-in-loop steps; local encoder fallback produced the deliverable when Remotion could not start.",
+          "user_visible": true,
+          "user_approved": true,
+          "confidence": 0.72
+        }
+      ]
+    }
+  },
+  "style_playbook": "clean-professional",
+  "review": {
+    "stage": "compose",
+    "round": 1,
+    "decision": "PASS_WITH_WARNINGS",
+    "findings": [
+      {
+        "severity": "warning",
+        "title": "Remotion execution fallback",
+        "description": "Remotion could not download Chrome due DNS and no local Chromium was installed; local FFmpeg frame encoding produced final MP4."
+      },
+      {
+        "severity": "warning",
+        "title": "No audio track",
+        "description": "No configured TTS provider; produced caption-led video."
+      }
+    ],
+    "summary": {
+      "critical": 0,
+      "warnings": 2,
+      "success_criteria_met": "2/2"
+    }
+  },
+  "cost_snapshot": {
+    "spent_usd": 0,
+    "stage_estimated_usd": 0,
+    "budget_cap_usd": 2.0
+  },
+  "metadata": {
+    "auto_advanced": true,
+    "final_output": "projects/khk-er-proteostasis-paper/renders/final.mp4",
+    "binary_commit_policy": "MP4 generated locally; not tracked in git.",
+    "github_delivery": "Use the Render KHK video GitHub Actions workflow artifact."
+  }
+}
