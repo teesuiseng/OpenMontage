@@ -24,6 +24,7 @@ metadata:
     - "If GitHub Actions is disabled, render manually with scripts/render_paper_caption_video.py."
   render_workflow: .github/workflows/render-paper-caption-video.yml
   renderer_script: scripts/render_paper_caption_video.py
+  openmontage_tool: paper_caption_render
 
 required_skills:
   - pipelines/paper-caption-video/executive-producer
@@ -137,7 +138,8 @@ stages:
     produces:
       - render_report
       - final_review
-    tools_available: []
+    tools_available:
+      - paper_caption_render
     checkpoint_required: true
     human_approval_default: false
     review_focus:

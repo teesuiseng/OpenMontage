@@ -60,14 +60,28 @@ jobs:
           echo "project_id=$PROJECT_ID" >> "$GITHUB_OUTPUT"
           echo "duration=$DURATION" >> "$GITHUB_OUTPUT"
 
-      - name: Render caption video
+      - name: Render caption video via OpenMontage tool
         run: |
-          python scripts/render_paper_caption_video.py \
-            --paper "${{ steps.inputs.outputs.paper_path }}" \
-            --project-id "${{ steps.inputs.outputs.project_id }}" \
-            --duration-seconds "${{ steps.inputs.outputs.duration }}" \
-            --output "projects/${{ steps.inputs.outputs.project_id }}/renders/final.mp4" \
-            --story-json "projects/${{ steps.inputs.outputs.project_id }}/artifacts/story.json"
+          python - <<'PY'
+          import json
+          from tools.video.paper_caption_render import PaperCaptionRender
+
+          result = PaperCaptionRender().execute({
+              "paper_path": "${{ steps.inputs.outputs.paper_path }}",
+              "project_id": "${{ steps.inputs.outputs.project_id }}",
+              "duration_seconds": int("${{ steps.inputs.outputs.duration }}"),
+              "output_path": "projects/${{ steps.inputs.outputs.project_id }}/renders/final.mp4",
+              "story_json_path": "projects/${{ steps.inputs.outputs.project_id }}/artifacts/story.json",
+          })
+          print(json.dumps({
+              "success": result.success,
+              "data": result.data,
+              "artifacts": result.artifacts,
+              "error": result.error,
+          }, indent=2))
+          if not result.success:
+              raise SystemExit(result.error or "paper_caption_render failed")
+          PY
 
       - name: Verify rendered MP4
         run: |
