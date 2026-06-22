@@ -1,0 +1,201 @@
+{
+  "version": "1.0",
+  "project_id": "khk-er-proteostasis-paper",
+  "pipeline_type": "animated-explainer",
+  "stage": "script",
+  "status": "awaiting_human",
+  "timestamp": "2026-06-22T14:21:17.844598+00:00",
+  "checkpoint_policy": "guided",
+  "human_approval_required": true,
+  "human_approved": false,
+  "artifacts": {
+    "script": {
+      "version": "1.0",
+      "title": "The Enzyme With Two Jobs",
+      "total_duration_seconds": 60,
+      "sections": [
+        {
+          "id": "s1",
+          "label": "Hook",
+          "text": "Ketohexokinase is usually framed as the fructose enzyme that fuels fatty liver. But this paper adds a twist: under nutrient stress, KHK may also help liver cells survive.",
+          "start_seconds": 0,
+          "end_seconds": 8,
+          "speaker_directions": "Start with a measured, surprising tone. Pause briefly after 'twist'.",
+          "enhancement_cues": [
+            {
+              "type": "overlay",
+              "description": "Bold title card: 'KHK: one enzyme, two jobs' with fructose molecule icon and hepatocyte outline.",
+              "timestamp_seconds": 1
+            },
+            {
+              "type": "animation",
+              "description": "Fructose and palmitate icons drift into a simplified liver cell.",
+              "timestamp_seconds": 5
+            }
+          ],
+          "pronunciation_guides": [
+            {
+              "word": "Ketohexokinase",
+              "phonetic": "KEE-toh-hex-oh-KY-nase"
+            },
+            {
+              "word": "KHK",
+              "phonetic": "kay-aych-kay"
+            }
+          ],
+          "source_ref": "proposal_packet.concept_options[c1].hook,key_points[0]"
+        },
+        {
+          "id": "s2",
+          "label": "Setup",
+          "text": "In hepatocytes exposed to fructose plus saturated fat, the endoplasmic reticulum gets overloaded. Misfolded proteins pile up, and the cell has to choose: adapt, or trigger death programs.",
+          "start_seconds": 8,
+          "end_seconds": 18,
+          "speaker_directions": "Clear technical delivery; slow slightly on 'endoplasmic reticulum'.",
+          "enhancement_cues": [
+            {
+              "type": "diagram",
+              "description": "Clean ER-stress diagram: nutrient overload \u2192 ER folding backlog \u2192 decision fork.",
+              "timestamp_seconds": 10
+            },
+            {
+              "type": "overlay",
+              "description": "Key term card: 'ER proteostasis = keeping protein folding under control'.",
+              "timestamp_seconds": 14
+            }
+          ],
+          "pronunciation_guides": [
+            {
+              "word": "hepatocytes",
+              "phonetic": "heh-PAT-oh-sites"
+            },
+            {
+              "word": "endoplasmic reticulum",
+              "phonetic": "EN-doh-PLAZ-mik reh-TIK-yoo-lum"
+            }
+          ],
+          "source_ref": "proposal_packet.concept_options[c1].key_points[0]"
+        },
+        {
+          "id": "s3",
+          "label": "Build",
+          "text": "Here is the surprise. When KHK was present, stress signaling leaned toward the adaptive IRE-one-alpha and XBP-one pathway. When KHK was knocked down, protein aggregates and apoptotic signals rose.",
+          "start_seconds": 18,
+          "end_seconds": 33,
+          "speaker_directions": "Emphasize 'surprise'. Keep acronyms crisp and unhurried.",
+          "enhancement_cues": [
+            {
+              "type": "animation",
+              "description": "Split screen: left shows KHK present \u2192 blue adaptive IRE1\u03b1/XBP1 branch; right shows KHK loss \u2192 amber/red aggregate and apoptosis branch.",
+              "timestamp_seconds": 20
+            },
+            {
+              "type": "stat_card",
+              "description": "Display contrast card: 'KHK present: adaptive UPR' vs 'KHK loss: proteotoxic stress'.",
+              "timestamp_seconds": 28
+            }
+          ],
+          "pronunciation_guides": [
+            {
+              "word": "IRE1\u03b1",
+              "phonetic": "eye-ar-ee one alpha"
+            },
+            {
+              "word": "XBP1",
+              "phonetic": "ex-bee-pee one"
+            },
+            {
+              "word": "apoptotic",
+              "phonetic": "ay-pop-TAH-tik"
+            }
+          ],
+          "source_ref": "proposal_packet.concept_options[c1].key_points[1-2]"
+        },
+        {
+          "id": "s4",
+          "label": "Climax",
+          "text": "So KHK is not just a metabolic accelerator. In this model, it is part of a stress-adaptation system that helps preserve ER proteostasis before the cell tips into apoptosis.",
+          "start_seconds": 33,
+          "end_seconds": 46,
+          "speaker_directions": "Deliver as the aha moment; warmer and slightly slower.",
+          "enhancement_cues": [
+            {
+              "type": "diagram",
+              "description": "Pathway resolves into a central message: metabolism and proteostasis intersect at KHK.",
+              "timestamp_seconds": 35
+            },
+            {
+              "type": "overlay",
+              "description": "Aha card: 'Metabolism \u2194 ER stress adaptation'.",
+              "timestamp_seconds": 41
+            }
+          ],
+          "pronunciation_guides": [
+            {
+              "word": "proteostasis",
+              "phonetic": "PRO-tee-oh-STAY-sis"
+            }
+          ],
+          "source_ref": "proposal_packet.concept_options[c1].core_message"
+        },
+        {
+          "id": "s5",
+          "label": "Landing",
+          "text": "That creates a therapeutic nuance: blocking harmful fructose flux may not be the same as deleting KHK entirely. The next question is how to separate enzyme activity from this protective stress role.",
+          "start_seconds": 46,
+          "end_seconds": 60,
+          "speaker_directions": "Conclude with thoughtful precision; leave room after the final sentence.",
+          "enhancement_cues": [
+            {
+              "type": "animation",
+              "description": "Therapeutic balance scale: reduce fructose flux on one side, preserve ER protection on the other.",
+              "timestamp_seconds": 48
+            },
+            {
+              "type": "overlay",
+              "description": "CTA lower third: 'Read the article: doi.org/10.1152/ajpgi.00235.2025'.",
+              "timestamp_seconds": 56
+            }
+          ],
+          "pronunciation_guides": [],
+          "source_ref": "proposal_packet.concept_options[c1].key_points[3],cta"
+        }
+      ],
+      "metadata": {
+        "project_id": "khk-er-proteostasis-paper",
+        "pipeline_type": "animated-explainer",
+        "selected_concept_id": "c1",
+        "target_platform": "linkedin",
+        "tone": "Accessible, polished, scientifically precise",
+        "word_count": 146,
+        "pace_wpm": "approximately 146 wpm",
+        "approval_status": "awaiting_human",
+        "review_summary": "PASS: 0 critical findings; timing, narrative arc, and cue density meet script-stage criteria."
+      }
+    }
+  },
+  "style_playbook": "clean-professional",
+  "review": {
+    "stage": "script",
+    "round": 1,
+    "decision": "PASS",
+    "findings": [],
+    "summary": {
+      "critical": 0,
+      "suggestions": 0,
+      "nitpicks": 0,
+      "playbook_violations": 0,
+      "success_criteria_met": "2/2",
+      "notes": [
+        "Narrative follows hook/setup/build/climax/landing.",
+        "Enhancement cues appear at least every 8-10 seconds.",
+        "Word count is within the 130-150 word budget for a 60 second technical explainer."
+      ]
+    }
+  },
+  "cost_snapshot": {
+    "spent_usd": 0,
+    "stage_estimated_usd": 0,
+    "budget_cap_usd": 2.0
+  }
+}
