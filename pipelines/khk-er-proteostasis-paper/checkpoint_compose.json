@@ -44,7 +44,9 @@
         "requested_no_human_loop": true,
         "primary_runtime": "remotion",
         "actual_encoder": "bundled Remotion compositor FFmpeg",
-        "raw_render_report": "projects/khk-er-proteostasis-paper/artifacts/local_render_report_raw.json"
+        "raw_render_report": "projects/khk-er-proteostasis-paper/artifacts/local_render_report_raw.json",
+        "original_workspace_output": "projects/khk-er-proteostasis-paper/renders/final.mp4",
+        "binary_commit_policy": "MP4 is generated locally and intentionally not committed because binary PR diffs are unsupported in the Codex/GitHub flow."
       }
     },
     "final_review": {
@@ -118,7 +120,9 @@
       "recommended_action": "present_to_user",
       "metadata": {
         "project_id": "khk-er-proteostasis-paper",
-        "reviewed_at": "2026-06-22T14:47:00+00:00"
+        "reviewed_at": "2026-06-22T14:47:00+00:00",
+        "original_workspace_output": "projects/khk-er-proteostasis-paper/renders/final.mp4",
+        "binary_commit_policy": "MP4 is generated locally and intentionally not committed because binary PR diffs are unsupported in the Codex/GitHub flow."
       }
     },
     "decision_log": {
@@ -277,6 +281,7 @@
   },
   "metadata": {
     "auto_advanced": true,
-    "final_output": "projects/khk-er-proteostasis-paper/renders/final.mp4"
+    "final_output": "projects/khk-er-proteostasis-paper/renders/final.mp4",
+    "binary_commit_policy": "MP4 generated locally; not tracked in git."
   }
 }
