@@ -1,0 +1,364 @@
+{
+  "version": "1.0",
+  "project_id": "khk-er-proteostasis-paper",
+  "pipeline_type": "animated-explainer",
+  "stage": "scene_plan",
+  "status": "completed",
+  "timestamp": "2026-06-22T13:21:11.249072+00:00",
+  "checkpoint_policy": "guided",
+  "human_approval_required": true,
+  "human_approved": true,
+  "artifacts": {
+    "scene_plan": {
+      "version": "1.0",
+      "style_playbook": "clean-professional",
+      "scenes": [
+        {
+          "id": "scene-01",
+          "type": "text_card",
+          "description": "Opening title card introduces KHK as a familiar fructose enzyme, then reveals the \u201csecond job\u201d hook using a clean blue-highlight text treatment.",
+          "start_seconds": 0,
+          "end_seconds": 6,
+          "script_section_id": "s1",
+          "framing": "Centered title stack on white background; KHK acronym is the visual center with a small liver-cell icon in the upper right.",
+          "movement": "Text fades up in two beats: first \u201cfructose enzyme,\u201d then \u201csecond job\u201d scales from 0.95 to 1.0.",
+          "transition_in": "fade",
+          "transition_out": "dissolve",
+          "overlay_notes": "Exact overlay text: \u201cKHK has a second job.\u201d Use Inter bold, blue #2563EB highlight, no more than three colors.",
+          "shot_language": {
+            "shot_size": "medium",
+            "camera_movement": "static",
+            "lens_mm": 50,
+            "lighting_key": "high_key",
+            "depth_of_field": "deep",
+            "color_temperature": "neutral"
+          },
+          "shot_intent": "Create immediate curiosity while keeping the scientific title legible and trustworthy.",
+          "narrative_role": "introduce_subject",
+          "information_role": "Viewer learns the video is about a noncanonical KHK role, not a generic fructose explainer.",
+          "hero_moment": false,
+          "texture_keywords": [
+            "clean",
+            "flat",
+            "white background",
+            "blue accent"
+          ],
+          "required_assets": [
+            {
+              "type": "remotion_text_card",
+              "description": "Remotion TextCard with exact hook typography and small vector liver-cell icon; no AI-generated text.",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "scene-02",
+          "type": "animation",
+          "description": "Nutrient overload enters a simplified hepatocyte: fructose hexagons and palmitate droplets move toward an ER workspace where unfolded protein shapes begin to accumulate.",
+          "start_seconds": 6,
+          "end_seconds": 15,
+          "script_section_id": "s2",
+          "framing": "Wide diagrammatic cell cross-section; hepatocyte outline fills center, ER ribbons sit in the middle third, nutrient icons enter from left.",
+          "movement": "Fructose and palmitate icons slide in left-to-right; ER protein shapes gently stack up as the narrator says \u201ccomes under pressure.\u201d",
+          "transition_in": "fade",
+          "transition_out": "slide-left",
+          "overlay_notes": "Labels: \u201cfructose,\u201d \u201csaturated fat,\u201d \u201cER protein-folding workspace.\u201d Keep labels outside foreground depth as overlay badges.",
+          "shot_language": {
+            "shot_size": "wide",
+            "camera_movement": "static",
+            "lens_mm": 35,
+            "lighting_key": "high_key",
+            "depth_of_field": "deep",
+            "color_temperature": "neutral"
+          },
+          "shot_intent": "Translate nutrient stress into a concrete visual load on the ER.",
+          "narrative_role": "establish_context",
+          "information_role": "Viewer sees why hepatocytes need an ER stress response under fructose-plus-fat overload.",
+          "hero_moment": false,
+          "texture_keywords": [
+            "clean lines",
+            "rounded icons",
+            "soft shadows",
+            "blue green accent"
+          ],
+          "required_assets": [
+            {
+              "type": "remotion_vector_animation",
+              "description": "Flat hepatocyte schematic with fructose and palmitate icons; clean professional blue-white-gray palette.",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "scene-03",
+          "type": "diagram",
+          "description": "Progressive pathway reveal: Nutrient overload leads to KHK upregulation, then to adaptive IRE1\u03b1-XBP1 signaling and ER chaperone support.",
+          "start_seconds": 15,
+          "end_seconds": 25,
+          "script_section_id": "s3",
+          "framing": "Full-screen left-to-right pathway diagram with four rounded nodes and generous whitespace.",
+          "movement": "Nodes appear sequentially on narration beats; KHK node pulses once as \u201cKHK rises\u201d is spoken; final adaptive branch glows green.",
+          "transition_in": "dissolve",
+          "transition_out": "dissolve",
+          "overlay_notes": "Use exact node labels: \u201cNutrient overload,\u201d \u201cKHK \u2191,\u201d \u201cIRE1\u03b1-XBP1,\u201d \u201cAdaptive ER support.\u201d",
+          "shot_language": {
+            "shot_size": "medium_wide",
+            "camera_movement": "static",
+            "lens_mm": 50,
+            "lighting_key": "high_key",
+            "depth_of_field": "deep",
+            "color_temperature": "neutral"
+          },
+          "shot_intent": "Show the central protective mechanism as a clear pathway, not a text-heavy pathway dump.",
+          "narrative_role": "deliver_payload",
+          "information_role": "Viewer learns that KHK tracks with the adaptive IRE1\u03b1-XBP1 arm of UPR.",
+          "hero_moment": false,
+          "texture_keywords": [
+            "Mermaid-style flowchart",
+            "rounded nodes",
+            "blue primary",
+            "green adaptive accent"
+          ],
+          "required_assets": [
+            {
+              "type": "mermaid_diagram",
+              "description": "Flowchart LR: Nutrient overload --> KHK up --> IRE1\u03b1-XBP1 --> Adaptive ER support; GitHub Light/default theme, rounded-node styling, no dense subgraphs.",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "scene-04",
+          "type": "animation",
+          "description": "Evidence triptych showing the same KHK-IRE1\u03b1-XBP1 axis across HepG2 cells, GAN diet-fed mouse hepatocytes, and MASLD patient biopsies.",
+          "start_seconds": 25,
+          "end_seconds": 34,
+          "script_section_id": "s4",
+          "framing": "Three equal cards across the screen; each card has an icon, label, and small upward trend line.",
+          "movement": "Cards cascade in one by one: cells, mice, humans. A shared blue line connects the cards to imply conserved axis.",
+          "transition_in": "slide-left",
+          "transition_out": "dissolve",
+          "overlay_notes": "Card labels: \u201cHepG2 cells,\u201d \u201cGAN-diet mice,\u201d \u201cMASLD biopsies.\u201d Badge: \u201cconserved axis.\u201d",
+          "shot_language": {
+            "shot_size": "medium_wide",
+            "camera_movement": "static",
+            "lens_mm": 50,
+            "lighting_key": "high_key",
+            "depth_of_field": "deep",
+            "color_temperature": "neutral"
+          },
+          "shot_intent": "Establish that the paper\u2019s signal is not limited to one experimental system.",
+          "narrative_role": "evidence",
+          "information_role": "Viewer understands that the axis was observed in cell, mouse, and human contexts.",
+          "hero_moment": false,
+          "texture_keywords": [
+            "card grid",
+            "scientific icons",
+            "clean chart lines"
+          ],
+          "required_assets": [
+            {
+              "type": "remotion_card_grid",
+              "description": "Three evidence cards with icons and mini trend arrows; exact labels rendered in Remotion.",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "scene-05",
+          "type": "animation",
+          "description": "Hero split-screen twist: the adaptive XBP1 route dims while misfolded proteins, ubiquitin tags, and PERK-CHOP apoptotic signaling intensify after KHK knockdown.",
+          "start_seconds": 34,
+          "end_seconds": 46,
+          "script_section_id": "s5",
+          "framing": "Split screen with left adaptive branch in blue/green and right stress/apoptosis branch in amber/red; KHK knockdown toggle sits at center.",
+          "movement": "Center toggle flips to \u201cKHK knockdown\u201d; left branch opacity lowers; right branch aggregates multiply and red warning line grows toward apoptosis.",
+          "transition_in": "dissolve",
+          "transition_out": "dissolve",
+          "overlay_notes": "Overlays: \u201cKHK knockdown,\u201d \u201cmisfolded proteins \u2191,\u201d \u201cubiquitination \u2191,\u201d \u201cPERK-CHOP apoptosis.\u201d",
+          "shot_language": {
+            "shot_size": "wide",
+            "camera_movement": "static",
+            "lens_mm": 35,
+            "lighting_key": "high_key",
+            "depth_of_field": "deep",
+            "color_temperature": "neutral"
+          },
+          "shot_intent": "Deliver the surprising reversal that makes the paper memorable.",
+          "narrative_role": "comparison",
+          "information_role": "Viewer learns that removing KHK disrupts proteostasis and shifts cells toward apoptotic UPR.",
+          "hero_moment": true,
+          "texture_keywords": [
+            "split screen",
+            "blue versus amber contrast",
+            "clean warning accents"
+          ],
+          "required_assets": [
+            {
+              "type": "remotion_split_diagram",
+              "description": "Animated split pathway: adaptive XBP1 support dims; PERK-CHOP apoptotic branch intensifies with aggregate icons and ubiquitin tags.",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "scene-06",
+          "type": "diagram",
+          "description": "Dual-role KHK card: KHK in the center with two labeled functions\u2014fructose flux gatekeeper and ER proteostasis safeguard.",
+          "start_seconds": 46,
+          "end_seconds": 56,
+          "script_section_id": "s6",
+          "framing": "Centered KHK node with two balanced side panels; left panel metabolic flux, right panel ER protection.",
+          "movement": "KHK node appears first; left and right role labels expand outward; a subtle checkmark appears on \u201csafeguard.\u201d",
+          "transition_in": "fade",
+          "transition_out": "dissolve",
+          "overlay_notes": "Exact role labels: \u201cfructose flux gatekeeper\u201d and \u201cER proteostasis safeguard.\u201d",
+          "shot_language": {
+            "shot_size": "medium",
+            "camera_movement": "static",
+            "lens_mm": 50,
+            "lighting_key": "high_key",
+            "depth_of_field": "deep",
+            "color_temperature": "neutral"
+          },
+          "shot_intent": "Turn the mechanistic findings into a memorable two-role takeaway.",
+          "narrative_role": "resolution",
+          "information_role": "Viewer remembers KHK as a dual-function protein, not just a fructose enzyme.",
+          "hero_moment": false,
+          "texture_keywords": [
+            "two-column comparison",
+            "rounded labels",
+            "blue-green palette"
+          ],
+          "required_assets": [
+            {
+              "type": "mermaid_diagram",
+              "description": "Simple central KHK node branching to two function nodes: fructose flux gatekeeper and ER proteostasis safeguard; sparse labels only.",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "scene-07",
+          "type": "text_card",
+          "description": "Therapeutic precision message: reduce harmful fructose flux without losing ER protection, framed as a balanced translational takeaway.",
+          "start_seconds": 56,
+          "end_seconds": 60,
+          "script_section_id": "s7",
+          "framing": "Large centered sentence with \u201cprecision\u201d highlighted; small ER shield icon on the right.",
+          "movement": "Keyword \u201cprecision\u201d fades in amber; phrase \u201cwithout losing ER protection\u201d underlines in green.",
+          "transition_in": "fade",
+          "transition_out": "dissolve",
+          "overlay_notes": "Exact overlay: \u201cPrecision: reduce fructose flux without losing ER protection.\u201d",
+          "shot_language": {
+            "shot_size": "medium_close",
+            "camera_movement": "static",
+            "lens_mm": 50,
+            "lighting_key": "high_key",
+            "depth_of_field": "deep",
+            "color_temperature": "neutral"
+          },
+          "shot_intent": "Land the translational implication without overstating clinical advice.",
+          "narrative_role": "resolution",
+          "information_role": "Viewer understands the therapeutic nuance: selective inhibition may matter.",
+          "hero_moment": false,
+          "texture_keywords": [
+            "exact text",
+            "clean highlight",
+            "minimal icon"
+          ],
+          "required_assets": [
+            {
+              "type": "remotion_text_card",
+              "description": "Exact-text Remotion card for therapeutic precision message; no generated image text.",
+              "source": "generate"
+            }
+          ]
+        },
+        {
+          "id": "scene-08",
+          "type": "text_card",
+          "description": "Final DOI and paper card with title, journal, and DOI shown exactly for sharing and follow-up.",
+          "start_seconds": 60,
+          "end_seconds": 63,
+          "script_section_id": "s7",
+          "framing": "Centered citation card; title wraps in two lines, DOI in blue button-style badge at bottom.",
+          "movement": "Citation card fades in; DOI badge gently pulses once to cue screenshot/share.",
+          "transition_in": "fade",
+          "transition_out": "fade",
+          "overlay_notes": "Exact text: \u201cBeyond fructolysis: ketohexokinase orchestrates ER proteostasis in nutrient-stressed hepatocytes\u201d and DOI \u201c10.1152/ajpgi.00235.2025.\u201d",
+          "shot_language": {
+            "shot_size": "medium",
+            "camera_movement": "static",
+            "lens_mm": 50,
+            "lighting_key": "high_key",
+            "depth_of_field": "deep",
+            "color_temperature": "neutral"
+          },
+          "shot_intent": "Provide a readable, accurate citation and call to read the open-access paper.",
+          "narrative_role": "call_to_action",
+          "information_role": "Viewer knows where to find the paper.",
+          "hero_moment": false,
+          "texture_keywords": [
+            "citation card",
+            "exact text",
+            "white background",
+            "blue DOI badge"
+          ],
+          "required_assets": [
+            {
+              "type": "remotion_text_card",
+              "description": "Exact citation card rendered by Remotion to avoid hallucinated DOI/title text.",
+              "source": "generate"
+            }
+          ]
+        }
+      ],
+      "metadata": {
+        "approved_concept_id": "c1",
+        "approved_runtime": "remotion",
+        "total_duration_seconds": 63,
+        "scene_count": 8,
+        "scene_types": [
+          "text_card",
+          "animation",
+          "diagram"
+        ],
+        "style_constraints": [
+          "clean-professional palette",
+          "Inter typography",
+          "fade/dissolve/slide-left transitions",
+          "minimum 2.5s scene hold respected"
+        ],
+        "coverage": "Scenes cover script sections s1-s7 with no timeline gaps.",
+        "visual_strategy": "Remotion-native text cards and animations plus Mermaid-compatible diagrams; no unavailable image/video generation required."
+      }
+    }
+  },
+  "style_playbook": "clean-professional",
+  "review": {
+    "decision": "PASS",
+    "round": 1,
+    "findings": [],
+    "summary": {
+      "critical": 0,
+      "suggestions": 0,
+      "nitpicks": 0,
+      "success_criteria_met": "Full 63-second duration covered, all script sections represented, three scene types used, and all assets are feasible with Remotion/Mermaid path.",
+      "slideshow_risk": "strong (0.42 average)"
+    },
+    "slideshow_risk": {
+      "average": 0.42,
+      "verdict": "strong",
+      "render_runtime": "remotion"
+    }
+  },
+  "cost_snapshot": {
+    "spent_usd": 0,
+    "estimated_remaining_usd": 0,
+    "budget_cap_usd": 0
+  },
+  "metadata": {
+    "approved": "scene plan approved; assets generated"
+  }
+}

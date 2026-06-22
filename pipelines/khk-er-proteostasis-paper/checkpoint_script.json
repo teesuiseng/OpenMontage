@@ -1,0 +1,230 @@
+{
+  "version": "1.0",
+  "project_id": "khk-er-proteostasis-paper",
+  "pipeline_type": "animated-explainer",
+  "stage": "script",
+  "status": "completed",
+  "timestamp": "2026-06-22T13:17:31.413954+00:00",
+  "checkpoint_policy": "guided",
+  "human_approval_required": true,
+  "human_approved": true,
+  "artifacts": {
+    "script": {
+      "version": "1.0",
+      "title": "The Enzyme With Two Jobs",
+      "total_duration_seconds": 63,
+      "sections": [
+        {
+          "id": "s1",
+          "label": "Hook",
+          "start_seconds": 0,
+          "end_seconds": 6,
+          "text": "KHK is usually introduced as the liver enzyme that processes fructose. But this paper shows it has a second job.",
+          "speaker_directions": "Start measured and curious. Slight emphasis on \u201csecond job.\u201d Pause briefly after the final phrase.",
+          "enhancement_cues": [
+            {
+              "type": "overlay",
+              "description": "Title card: \u201cKHK has a second job\u201d with KHK highlighted in blue.",
+              "timestamp_seconds": 1
+            }
+          ],
+          "pronunciation_guides": [
+            {
+              "word": "KHK",
+              "phonetic": "kay-aych-kay"
+            }
+          ],
+          "source_ref": "proposal_packet.concept_options.c1.hook; research_brief.data_points[3]"
+        },
+        {
+          "id": "s2",
+          "label": "Nutrient stress setup",
+          "start_seconds": 6,
+          "end_seconds": 15,
+          "text": "When hepatocytes are overloaded with fructose and saturated fat, the endoplasmic reticulum\u2014the cell\u2019s protein-folding workspace\u2014comes under pressure.",
+          "speaker_directions": "Professional, explanatory pace. Define \u201cendoplasmic reticulum\u201d clearly without rushing.",
+          "enhancement_cues": [
+            {
+              "type": "animation",
+              "description": "Fructose and palmitate icons flow into a hepatocyte; the ER workspace fills with folding protein shapes.",
+              "timestamp_seconds": 7
+            }
+          ],
+          "pronunciation_guides": [
+            {
+              "word": "hepatocytes",
+              "phonetic": "heh-PAT-oh-sites"
+            },
+            {
+              "word": "endoplasmic reticulum",
+              "phonetic": "EN-doh-PLAZ-mik reh-TIK-yoo-lum"
+            }
+          ],
+          "source_ref": "research_brief.data_points[0]"
+        },
+        {
+          "id": "s3",
+          "label": "Adaptive pathway",
+          "start_seconds": 15,
+          "end_seconds": 25,
+          "text": "In that stress state, KHK rises alongside the adaptive IRE1 alpha\u2013XBP1 branch of the unfolded protein response.",
+          "speaker_directions": "Slow slightly on pathway names. Treat \u201cadaptive\u201d as the key word.",
+          "enhancement_cues": [
+            {
+              "type": "diagram",
+              "description": "Pathway diagram: Nutrient overload \u2192 KHK \u2191 \u2192 IRE1\u03b1-XBP1 adaptive response \u2192 ER chaperone support.",
+              "timestamp_seconds": 16
+            }
+          ],
+          "pronunciation_guides": [
+            {
+              "word": "IRE1\u03b1",
+              "phonetic": "eye-are-ee-one alpha"
+            },
+            {
+              "word": "XBP1",
+              "phonetic": "ex-bee-pee-one"
+            }
+          ],
+          "source_ref": "research_brief.data_points[1]"
+        },
+        {
+          "id": "s4",
+          "label": "Cross-species evidence",
+          "start_seconds": 25,
+          "end_seconds": 34,
+          "text": "The same axis appeared in HepG2 cells, primary hepatocytes from GAN diet-fed mice, and human MASLD liver biopsies.",
+          "speaker_directions": "Use a confident list rhythm: cells, mice, humans. Emphasize \u201csame axis.\u201d",
+          "enhancement_cues": [
+            {
+              "type": "stat_card",
+              "description": "Three evidence cards animate in: HepG2 cells | GAN-diet mice | MASLD patient biopsies.",
+              "timestamp_seconds": 26
+            }
+          ],
+          "pronunciation_guides": [
+            {
+              "word": "HepG2",
+              "phonetic": "hep-gee-two"
+            },
+            {
+              "word": "GAN",
+              "phonetic": "gan"
+            },
+            {
+              "word": "MASLD",
+              "phonetic": "mazz-ell-dee"
+            }
+          ],
+          "source_ref": "research_brief.data_points[1]"
+        },
+        {
+          "id": "s5",
+          "label": "The twist",
+          "start_seconds": 34,
+          "end_seconds": 46,
+          "text": "Then came the twist: knocking down KHK reduced this balance, but increased misfolded proteins, ubiquitination, and PERK-CHOP apoptotic signaling.",
+          "speaker_directions": "Shift to a more dramatic, lower tone on \u201cthe twist.\u201d Keep technical list crisp and separated.",
+          "enhancement_cues": [
+            {
+              "type": "animation",
+              "description": "Split screen: left adaptive XBP1 path dims; right misfolded protein aggregates and red PERK-CHOP apoptosis path intensify.",
+              "timestamp_seconds": 35
+            }
+          ],
+          "pronunciation_guides": [
+            {
+              "word": "ubiquitination",
+              "phonetic": "you-BIK-wih-tin-AY-shun"
+            },
+            {
+              "word": "PERK-CHOP",
+              "phonetic": "perk chop"
+            }
+          ],
+          "source_ref": "research_brief.data_points[2]"
+        },
+        {
+          "id": "s6",
+          "label": "Therapeutic implication",
+          "start_seconds": 46,
+          "end_seconds": 56,
+          "text": "So KHK is not just a metabolic gatekeeper. It may also be a proteostasis safeguard that helps liver cells survive nutrient stress.",
+          "speaker_directions": "Clear aha moment. Emphasize the contrast between \u201cgatekeeper\u201d and \u201csafeguard.\u201d",
+          "enhancement_cues": [
+            {
+              "type": "overlay",
+              "description": "Two role labels appear beside KHK: \u201cfructose flux gatekeeper\u201d and \u201cER proteostasis safeguard.\u201d",
+              "timestamp_seconds": 47
+            }
+          ],
+          "pronunciation_guides": [
+            {
+              "word": "proteostasis",
+              "phonetic": "pro-tee-oh-STAY-sis"
+            }
+          ],
+          "source_ref": "research_brief.data_points[3]"
+        },
+        {
+          "id": "s7",
+          "label": "Landing and CTA",
+          "start_seconds": 56,
+          "end_seconds": 63,
+          "text": "That means future KHK therapies may need precision: reduce harmful fructose flux without losing ER protection. Read the open-access paper at the DOI shown here.",
+          "speaker_directions": "Concise closing. Slow down on \u201cprecision.\u201d Finish with a confident call to action.",
+          "enhancement_cues": [
+            {
+              "type": "overlay",
+              "description": "Final card: paper title, authors, journal, DOI 10.1152/ajpgi.00235.2025.",
+              "timestamp_seconds": 57
+            }
+          ],
+          "pronunciation_guides": [],
+          "source_ref": "research_brief.data_points[3]; proposal_packet.concept_options.c1.cta"
+        }
+      ],
+      "metadata": {
+        "approved_concept_id": "c1",
+        "approved_runtime": "remotion",
+        "target_platform": "linkedin",
+        "style_playbook": "clean-professional",
+        "word_count": 141,
+        "estimated_pace_wpm": 134.3,
+        "source_doi": "10.1152/ajpgi.00235.2025",
+        "approval_source": "User said: Approve Concept 1 with Remotion",
+        "script_approval": "User approved script; scene planning started."
+      }
+    }
+  },
+  "style_playbook": "clean-professional",
+  "review": {
+    "decision": "PASS",
+    "round": 1,
+    "findings": [
+      {
+        "severity": "suggestion",
+        "title": "Duration is slightly above nominal 60 seconds",
+        "description": "The script targets 63 seconds to preserve technical clarity at a moderate professional pace.",
+        "action": "If strict 60.0 seconds is required, trim the final CTA or compress the cross-species evidence line.",
+        "status": "accepted"
+      }
+    ],
+    "summary": {
+      "critical": 0,
+      "suggestions": 1,
+      "nitpicks": 0,
+      "word_count": 141,
+      "estimated_pace_wpm": 134.3,
+      "success_criteria_met": "Script approved by user; scene plan stage started."
+    }
+  },
+  "cost_snapshot": {
+    "spent_usd": 0,
+    "estimated_remaining_usd": 0,
+    "budget_cap_usd": 0
+  },
+  "metadata": {
+    "approved": "script approved; scene plan stage started"
+  }
+}

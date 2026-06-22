@@ -3,11 +3,11 @@
   "project_id": "khk-er-proteostasis-paper",
   "pipeline_type": "animated-explainer",
   "stage": "proposal",
-  "status": "awaiting_human",
+  "status": "completed",
   "timestamp": "2026-06-22T13:06:03.729699+00:00",
   "checkpoint_policy": "guided",
   "human_approval_required": true,
-  "human_approved": false,
+  "human_approved": true,
   "artifacts": {
     "proposal_packet": {
       "version": "1.0",
@@ -89,7 +89,7 @@
       ],
       "selected_concept": {
         "concept_id": "c1",
-        "rationale": "Agent recommendation pending user approval: c1 is the most balanced quick video because it is surprising, accurate, and works for both scientific and professional social audiences.",
+        "rationale": "User approved Concept 1 with Remotion.",
         "modifications": []
       },
       "production_plan": {
@@ -287,7 +287,8 @@
         "savings_options": []
       },
       "approval": {
-        "status": "pending",
+        "status": "approved",
+        "user_notes": "Approved Concept 1 with Remotion.",
         "approved_budget_usd": 0
       },
       "metadata": {
@@ -327,7 +328,7 @@
           "selected": "animated-explainer",
           "reason": "Paper announcement needs accuracy and pathway clarity more than cinematic footage.",
           "user_visible": true,
-          "user_approved": false,
+          "user_approved": true,
           "confidence": 0.9
         },
         {
@@ -359,7 +360,7 @@
           "selected": "remotion",
           "reason": "Recommended pending user approval because it is available and fits the data-explainer grammar.",
           "user_visible": true,
-          "user_approved": false,
+          "user_approved": true,
           "confidence": 0.85
         },
         {
@@ -390,7 +391,7 @@
           "selected": "c1",
           "reason": "Recommended pending user approval for widest high-quality impact.",
           "user_visible": true,
-          "user_approved": false,
+          "user_approved": true,
           "confidence": 0.88
         }
       ]
@@ -406,14 +407,14 @@
         "title": "Runtime requires user approval",
         "description": "Remotion is recommended because HyperFrames is unavailable, but the user still must approve render path before production.",
         "action": "Ask user to approve Remotion or choose FFmpeg-only fallback.",
-        "status": "pending"
+        "status": "accepted"
       }
     ],
     "summary": {
       "critical": 0,
       "suggestions": 1,
       "nitpicks": 0,
-      "success_criteria_met": "proposal packet prepared; approval pending"
+      "success_criteria_met": "Proposal packet approved by user; concept c1 and Remotion runtime locked for script stage."
     }
   },
   "cost_snapshot": {
@@ -422,6 +423,6 @@
     "budget_cap_usd": 2
   },
   "metadata": {
-    "awaiting": "concept, runtime, voice/music approval"
+    "approved": "concept c1 with Remotion; script stage started"
   }
 }

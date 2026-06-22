@@ -30,7 +30,7 @@
       "selected": "animated-explainer",
       "reason": "Paper announcement needs accuracy and pathway clarity more than cinematic footage.",
       "user_visible": true,
-      "user_approved": false,
+      "user_approved": true,
       "confidence": 0.9
     },
     {
@@ -62,7 +62,7 @@
       "selected": "remotion",
       "reason": "Recommended pending user approval because it is available and fits the data-explainer grammar.",
       "user_visible": true,
-      "user_approved": false,
+      "user_approved": true,
       "confidence": 0.85
     },
     {
@@ -93,7 +93,7 @@
       "selected": "c1",
       "reason": "Recommended pending user approval for widest high-quality impact.",
       "user_visible": true,
-      "user_approved": false,
+      "user_approved": true,
       "confidence": 0.88
     }
   ]
