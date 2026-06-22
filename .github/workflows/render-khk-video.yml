@@ -1,0 +1,42 @@
+name: Render KHK video
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "pipelines/khk-er-proteostasis-paper/**"
+      - "scripts/render_khk_video.py"
+      - ".github/workflows/render-khk-video.yml"
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install render dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg fonts-dejavu-core
+          python -m pip install --upgrade pip
+          python -m pip install pillow
+
+      - name: Render KHK video
+        run: python scripts/render_khk_video.py --output projects/khk-er-proteostasis-paper/renders/final.mp4
+
+      - name: Verify rendered MP4
+        run: |
+          ffprobe -v error \
+            -select_streams v:0 \
+            -show_entries stream=codec_name,width,height,r_frame_rate,duration \
+            -show_entries format=duration,size \
+            -of json \
+            projects/khk-er-proteostasis-paper/renders/final.mp4
+
+      - name: Upload rendered video artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: khk-er-proteostasis-paper-final-video
+          path: projects/khk-er-proteostasis-paper/renders/final.mp4
+          if-no-files-found: error

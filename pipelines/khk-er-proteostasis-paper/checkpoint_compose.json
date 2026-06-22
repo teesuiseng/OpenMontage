@@ -46,7 +46,8 @@
         "actual_encoder": "bundled Remotion compositor FFmpeg",
         "raw_render_report": "projects/khk-er-proteostasis-paper/artifacts/local_render_report_raw.json",
         "original_workspace_output": "projects/khk-er-proteostasis-paper/renders/final.mp4",
-        "binary_commit_policy": "MP4 is generated locally and intentionally not committed because binary PR diffs are unsupported in the Codex/GitHub flow."
+        "binary_commit_policy": "MP4 is generated locally and intentionally not committed because binary PR diffs are unsupported in the Codex/GitHub flow.",
+        "github_delivery": "Render KHK video workflow uploads khk-er-proteostasis-paper-final-video artifact."
       }
     },
     "final_review": {
@@ -122,7 +123,8 @@
         "project_id": "khk-er-proteostasis-paper",
         "reviewed_at": "2026-06-22T14:47:00+00:00",
         "original_workspace_output": "projects/khk-er-proteostasis-paper/renders/final.mp4",
-        "binary_commit_policy": "MP4 is generated locally and intentionally not committed because binary PR diffs are unsupported in the Codex/GitHub flow."
+        "binary_commit_policy": "MP4 is generated locally and intentionally not committed because binary PR diffs are unsupported in the Codex/GitHub flow.",
+        "github_delivery": "Render KHK video workflow uploads khk-er-proteostasis-paper-final-video artifact."
       }
     },
     "decision_log": {
@@ -282,6 +284,7 @@
   "metadata": {
     "auto_advanced": true,
     "final_output": "projects/khk-er-proteostasis-paper/renders/final.mp4",
-    "binary_commit_policy": "MP4 generated locally; not tracked in git."
+    "binary_commit_policy": "MP4 generated locally; not tracked in git.",
+    "github_delivery": "Use the Render KHK video GitHub Actions workflow artifact."
   }
 }

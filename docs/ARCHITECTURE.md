@@ -205,6 +205,7 @@ stages:
 | Pipeline | Category | Description |
 |----------|----------|-------------|
 | `animated-explainer` | generated | AI-produced explainer with research, narration, visuals, music |
+| `paper-caption-video` | generated | Committed paper `.txt` to caption-led MP4 delivered as a GitHub Actions artifact |
 | `animation` | animation | Motion graphics, kinetic typography |
 | `avatar-spokesperson` | talking_head | Avatar-driven presenter videos |
 | `character-animation` | animation | Local rigged cartoon characters with SVG rigs, pose libraries, GSAP timelines, and HyperFrames rendering |

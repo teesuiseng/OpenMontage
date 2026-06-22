@@ -1,22 +1,29 @@
 # KHK ER Proteostasis Paper Video
 
-The final video is a generated binary artifact and is **not committed to Git** because the Codex/GitHub PR flow cannot apply binary MP4 diffs reliably.
+The MP4 is **not committed as a binary file** because the Codex/GitHub PR flow cannot apply binary MP4 diffs reliably.
 
-## Local video path
+Instead, GitHub can render and store the video as a downloadable **Actions artifact**.
 
-After rendering, the video exists locally at:
+## Download the video from GitHub
+
+1. Open the repository's **Actions** tab.
+2. Select the **Render KHK video** workflow.
+3. Open the latest successful run.
+4. Download the artifact named **`khk-er-proteostasis-paper-final-video`**.
+5. Unzip the artifact and open `final.mp4`.
+
+## Render it manually from the repository
+
+```bash
+python -m pip install pillow
+python scripts/render_khk_video.py --output projects/khk-er-proteostasis-paper/renders/final.mp4
+```
+
+The manual render writes the MP4 to:
 
 ```text
 projects/khk-er-proteostasis-paper/renders/final.mp4
 ```
-
-A convenience copy may also exist locally at:
-
-```text
-assets/khk-er-proteostasis-paper/final.mp4
-```
-
-That convenience copy is gitignored on purpose so it does not block PR creation.
 
 ## Video details
 
@@ -29,4 +36,4 @@ That convenience copy is gitignored on purpose so it does not block PR creation.
 
 ## Why there is no committed `final.mp4`
 
-GitHub/Codex may show an error such as **"Binary files are not supported"** when a PR includes an MP4. To keep the PR mergeable, this repository stores the pipeline state and render metadata as text files, while the MP4 remains a generated local artifact.
+GitHub/Codex may show an error such as **"Binary files are not supported"** when a PR includes an MP4. To keep the PR mergeable while still making the video available on GitHub, the video is produced by the **Render KHK video** GitHub Actions workflow and uploaded as an artifact.

@@ -1,0 +1,10 @@
+Example Paper Title: A Short Demonstration of Caption-Led Paper Videos
+
+Abstract
+This example paper text demonstrates how a committed text file can be converted into a caption-led video without committing binary media to git. We show that a GitHub Actions workflow can render frames, encode an MP4, and upload the result as a downloadable artifact.
+
+Results
+The generated video is intentionally simple, high contrast, and caption based. This keeps the pipeline reproducible in constrained environments where browser-based renderers or TTS providers may be unavailable.
+
+Conclusion
+This workflow is useful for previewing paper summaries, but the extracted claims are heuristic and should be checked against the original paper before public use.
