@@ -6,10 +6,7 @@ on:
       paper_txt_path:
         description: "Path to a committed .txt paper input"
         required: true
-        type: choice
         default: "paper_inputs/thyroid.txt"
-        options:
-          - "paper_inputs/thyroid.txt"
       project_id:
         description: "Project/output id used for artifact paths"
         required: true
