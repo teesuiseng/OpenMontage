@@ -1,0 +1,73 @@
+Summary of Key Findings: Fructose Impairs Brown Adipogenesis via Thyroid Hormone Resistance
+Background
+Excessive fructose consumption is linked to metabolic diseases, but its effects on brown adipocytes—key regulators of energy homeostasis—remain poorly understood.
+
+Main Findings
+1. Fructose Impairs Brown Adipocyte Differentiation
+Reduced lipid droplet size and number
+
+Downregulated adipogenic markers: PPARγ, FABP4
+
+Suppressed the brown adipocyte identity protein UCP-1
+
+No significant changes in total protein or DNA content
+
+2. Fructose Induces Thyroid Hormone Resistance
+T3 (THR ligand) and resmetirom (THRβ agonist) dose-dependently increased UCP-1 in glucose medium
+
+Neither agent restored UCP-1 expression in fructose medium → thyroid hormone resistance
+
+3. Mechanism of THR Dysregulation
+Fructose specifically downregulated THRα1β1 (not RXR heterodimer partner)
+
+Mechanistically: ubiquitin-mediated degradation of THR
+
+Increased THR ubiquitination in fructose environment
+
+4. THR Overexpression Does Not Rescue UCP-1 in Fructose
+Overexpressing THR increased UCP-1 in glucose (as expected)
+
+Failed to restore UCP-1 in fructose → indicates a defect in THR transcriptional regulation
+
+5. Lipid Dynamics
+THR overexpression in glucose: reduced lipid droplet size (high turnover)
+
+THR overexpression in fructose: no change in lipid droplets → impaired lipid remodeling
+
+6. Secretome Proteomics Reveals Network Disruption
+Fructose altered secretome by:
+
+Increasing: glycolysis/TCA cycle proteins, mRNA processing, protein folding/chaperones (HSP90B, BiP), 14-3-3E signaling
+
+Decreasing: redox defense proteins (e.g., Prdx6) → increased oxidative burden
+
+THR overexpression in fructose:
+
+Reduced glycolysis/TCA proteins
+
+Decreased chaperone proteins → increased risk of protein misfolding
+
+Proposed Mechanism
+Fructose:
+
+Enhances THR ubiquitination → proteasomal degradation
+
+Induces oxidative stress (reduced Prdx6 secretion)
+
+May oxidatively modify the zinc-finger DNA-binding domain of THR
+
+Impairs THR-TRE binding → transcriptional silencing of UCP-1
+
+Disrupts THR/RXR complex function → thyroid hormone resistance
+
+Conclusions
+Fructose is a potent inhibitor of brown adipogenesis
+
+Induces thyroid hormone resistance via THR dysfunction
+
+Disrupts energy metabolism, redox protection, and proteostasis
+
+Links dietary fructose to impaired BAT function and metabolic imbalance
+
+Significance
+This study identifies a novel mechanism connecting dietary fructose to BAT dysfunction through THR-mediated transcriptional regulation, with implications for obesity, diabetes, and NAFLD pathogenesis.
