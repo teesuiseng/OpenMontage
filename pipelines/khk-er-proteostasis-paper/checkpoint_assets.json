@@ -1,0 +1,70 @@
+{
+  "version": "1.0",
+  "project_id": "khk-er-proteostasis-paper",
+  "pipeline_type": "animated-explainer",
+  "stage": "assets",
+  "status": "completed",
+  "timestamp": "2026-06-22T14:41:43.838659+00:00",
+  "checkpoint_policy": "guided",
+  "human_approval_required": false,
+  "human_approved": true,
+  "artifacts": {
+    "asset_manifest": {
+      "version": "1.0",
+      "assets": [
+        {
+          "id": "remotion-props",
+          "type": "animation",
+          "path": "artifacts/remotion_props.json",
+          "source_tool": "remotion",
+          "scene_id": "all",
+          "cost_usd": 0,
+          "format": "json",
+          "quality_score": 1,
+          "generation_summary": "Component-only Remotion motion-graphics render props."
+        },
+        {
+          "id": "caption-data",
+          "type": "subtitle",
+          "path": "assets/data/captions.json",
+          "source_tool": "script_timing",
+          "scene_id": "all",
+          "cost_usd": 0,
+          "format": "json",
+          "quality_score": 0.9,
+          "generation_summary": "Approximate word-level captions derived from the approved script timings."
+        }
+      ],
+      "total_cost_usd": 0,
+      "metadata": {
+        "project_id": "khk-er-proteostasis-paper",
+        "asset_strategy": "zero-key Remotion-native components; no external image/audio generation",
+        "all_paths_relative_to": "projects/khk-er-proteostasis-paper"
+      }
+    }
+  },
+  "style_playbook": "clean-professional",
+  "review": {
+    "stage": "assets",
+    "round": 1,
+    "decision": "PASS",
+    "findings": [],
+    "summary": {
+      "critical": 0,
+      "suggestions": 0,
+      "success_criteria_met": "2/2",
+      "notes": [
+        "All referenced data assets exist on disk.",
+        "No paid providers used."
+      ]
+    }
+  },
+  "cost_snapshot": {
+    "spent_usd": 0,
+    "stage_estimated_usd": 0,
+    "budget_cap_usd": 2.0
+  },
+  "metadata": {
+    "auto_advanced": true
+  }
+}

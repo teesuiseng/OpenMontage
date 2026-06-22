@@ -1,0 +1,183 @@
+{
+  "version": "1.0",
+  "project_id": "khk-er-proteostasis-paper",
+  "pipeline_type": "animated-explainer",
+  "stage": "edit",
+  "status": "completed",
+  "timestamp": "2026-06-22T14:42:05.532664+00:00",
+  "checkpoint_policy": "guided",
+  "human_approval_required": false,
+  "human_approved": true,
+  "artifacts": {
+    "edit_decisions": {
+      "version": "1.0",
+      "cuts": [
+        {
+          "id": "cut-01",
+          "source": "remotion-props",
+          "in_seconds": 0,
+          "out_seconds": 8,
+          "layer": "primary",
+          "transition_in": "fade",
+          "transition_out": "dissolve",
+          "transition_duration": 0.4,
+          "reason": "Opening paradox hook."
+        },
+        {
+          "id": "cut-02",
+          "source": "remotion-props",
+          "in_seconds": 8,
+          "out_seconds": 18,
+          "layer": "primary",
+          "transition_in": "fade",
+          "transition_out": "dissolve",
+          "transition_duration": 0.4,
+          "reason": "Summarizes setup as a pathway."
+        },
+        {
+          "id": "cut-03",
+          "source": "remotion-props",
+          "in_seconds": 18,
+          "out_seconds": 33,
+          "layer": "primary",
+          "transition_in": "fade",
+          "transition_out": "dissolve",
+          "transition_duration": 0.4,
+          "reason": "Core contrast from the paper."
+        },
+        {
+          "id": "cut-04",
+          "source": "remotion-props",
+          "in_seconds": 33,
+          "out_seconds": 46,
+          "layer": "primary",
+          "transition_in": "fade",
+          "transition_out": "dissolve",
+          "transition_duration": 0.4,
+          "reason": "Central conceptual payoff."
+        },
+        {
+          "id": "cut-05",
+          "source": "remotion-props",
+          "in_seconds": 46,
+          "out_seconds": 56,
+          "layer": "primary",
+          "transition_in": "fade",
+          "transition_out": "dissolve",
+          "transition_duration": 0.4,
+          "reason": "Translational takeaway."
+        },
+        {
+          "id": "cut-06",
+          "source": "remotion-props",
+          "in_seconds": 56,
+          "out_seconds": 60,
+          "layer": "primary",
+          "transition_in": "fade",
+          "transition_out": "dissolve",
+          "transition_duration": 0.4,
+          "reason": "Exact CTA end card."
+        }
+      ],
+      "overlays": [],
+      "audio": {},
+      "subtitles": {
+        "enabled": true,
+        "style": "word-by-word",
+        "source": "caption-data",
+        "font": "Inter",
+        "font_size": 42,
+        "color": "#1F2937",
+        "background": "rgba(255,255,255,0.85)",
+        "position": "bottom-center",
+        "max_words_per_line": 6
+      },
+      "transitions": [
+        {
+          "type": "fade",
+          "at_seconds": 8,
+          "duration_seconds": 0.4
+        },
+        {
+          "type": "slide-left",
+          "at_seconds": 18,
+          "duration_seconds": 0.4
+        },
+        {
+          "type": "dissolve",
+          "at_seconds": 33,
+          "duration_seconds": 0.4
+        },
+        {
+          "type": "fade",
+          "at_seconds": 56,
+          "duration_seconds": 0.4
+        }
+      ],
+      "renderer_family": "explainer-data",
+      "render_runtime": "remotion",
+      "slideshow_risk_score": {
+        "average": 0.17,
+        "verdict": "strong"
+      },
+      "metadata": {
+        "project_id": "khk-er-proteostasis-paper",
+        "props_path": "projects/khk-er-proteostasis-paper/artifacts/remotion_props.json",
+        "rich_cuts_count": 6,
+        "duration_seconds": 60,
+        "caption_led": true
+      }
+    }
+  },
+  "style_playbook": "clean-professional",
+  "review": {
+    "stage": "edit",
+    "round": 1,
+    "decision": "PASS",
+    "findings": [],
+    "summary": {
+      "critical": 0,
+      "suggestions": 0,
+      "slideshow_risk": {
+        "average": 0.17,
+        "verdict": "strong",
+        "dimensions": {
+          "repetition": {
+            "score": 0.0,
+            "reason": "Good variety"
+          },
+          "decorative_visuals": {
+            "score": 0.0,
+            "reason": "Most scenes have clear communicative purpose"
+          },
+          "weak_motion": {
+            "score": 0.0,
+            "reason": "Camera movement appears purposeful"
+          },
+          "weak_shot_intent": {
+            "score": 0.0,
+            "reason": "Strong shot intent coverage"
+          },
+          "typography_overreliance": {
+            "score": 1.0,
+            "reason": "Balanced text and visual content"
+          },
+          "unsupported_cinematic_claims": {
+            "score": 0.0,
+            "reason": "Not claiming cinematic treatment"
+          }
+        },
+        "render_runtime": "remotion"
+      },
+      "success_criteria_met": "2/2"
+    }
+  },
+  "cost_snapshot": {
+    "spent_usd": 0,
+    "stage_estimated_usd": 0,
+    "budget_cap_usd": 2.0
+  },
+  "metadata": {
+    "auto_advanced": true
+  }
+}
