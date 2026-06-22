@@ -17,7 +17,7 @@ metadata:
     delivery_mode: github_actions_artifact
     binary_policy: "Do not commit generated MP4 files; upload them as workflow artifacts."
   limitations:
-    - "The default renderer is heuristic and caption-led; it does not perform deep scientific peer review."
+    - "The default story extraction is heuristic; Remotion improves presentation quality but does not perform deep scientific peer review."
     - "No TTS/audio is generated unless a future provider-backed stage is added."
     - "The MP4 is not committed to git; it is uploaded as a GitHub Actions artifact."
     - "Workflow dispatch cannot upload arbitrary files directly; commit the .txt under paper_inputs/ first, or run on push."
@@ -81,6 +81,7 @@ stages:
     success_criteria:
       - Schema-valid script with timed sections
       - Total duration matches requested duration
+      - LinkedIn story quality gate passes before render
 
   - name: scene_plan
     skill: pipelines/explainer/scene-director
