@@ -1,0 +1,241 @@
+{
+  "version": "1.0",
+  "project_id": "khk-er-proteostasis-paper",
+  "pipeline_type": "animated-explainer",
+  "stage": "assets",
+  "status": "completed",
+  "timestamp": "2026-06-22T13:26:56.024010+00:00",
+  "checkpoint_policy": "guided",
+  "human_approval_required": false,
+  "human_approved": true,
+  "artifacts": {
+    "asset_manifest": {
+      "version": "1.0",
+      "assets": [
+        {
+          "id": "spec-scene-01",
+          "type": "animation",
+          "path": "assets/remotion_specs/scene-01_spec.json",
+          "source_tool": "remotion_primitives_spec",
+          "scene_id": "scene-01",
+          "cost_usd": 0,
+          "duration_seconds": 6,
+          "format": "json",
+          "quality_score": 0.92,
+          "subtype": "remotion_scene_spec",
+          "generation_summary": "Deterministic Remotion scene specification generated from approved scene plan."
+        },
+        {
+          "id": "spec-scene-02",
+          "type": "animation",
+          "path": "assets/remotion_specs/scene-02_spec.json",
+          "source_tool": "remotion_primitives_spec",
+          "scene_id": "scene-02",
+          "cost_usd": 0,
+          "duration_seconds": 9,
+          "format": "json",
+          "quality_score": 0.92,
+          "subtype": "remotion_scene_spec",
+          "generation_summary": "Deterministic Remotion scene specification generated from approved scene plan."
+        },
+        {
+          "id": "spec-scene-03",
+          "type": "animation",
+          "path": "assets/remotion_specs/scene-03_spec.json",
+          "source_tool": "remotion_primitives_spec",
+          "scene_id": "scene-03",
+          "cost_usd": 0,
+          "duration_seconds": 10,
+          "format": "json",
+          "quality_score": 0.92,
+          "subtype": "remotion_scene_spec",
+          "generation_summary": "Deterministic Remotion scene specification generated from approved scene plan."
+        },
+        {
+          "id": "spec-scene-04",
+          "type": "animation",
+          "path": "assets/remotion_specs/scene-04_spec.json",
+          "source_tool": "remotion_primitives_spec",
+          "scene_id": "scene-04",
+          "cost_usd": 0,
+          "duration_seconds": 9,
+          "format": "json",
+          "quality_score": 0.92,
+          "subtype": "remotion_scene_spec",
+          "generation_summary": "Deterministic Remotion scene specification generated from approved scene plan."
+        },
+        {
+          "id": "spec-scene-05",
+          "type": "animation",
+          "path": "assets/remotion_specs/scene-05_spec.json",
+          "source_tool": "remotion_primitives_spec",
+          "scene_id": "scene-05",
+          "cost_usd": 0,
+          "duration_seconds": 12,
+          "format": "json",
+          "quality_score": 0.92,
+          "subtype": "remotion_scene_spec",
+          "generation_summary": "Deterministic Remotion scene specification generated from approved scene plan."
+        },
+        {
+          "id": "spec-scene-06",
+          "type": "animation",
+          "path": "assets/remotion_specs/scene-06_spec.json",
+          "source_tool": "remotion_primitives_spec",
+          "scene_id": "scene-06",
+          "cost_usd": 0,
+          "duration_seconds": 10,
+          "format": "json",
+          "quality_score": 0.92,
+          "subtype": "remotion_scene_spec",
+          "generation_summary": "Deterministic Remotion scene specification generated from approved scene plan."
+        },
+        {
+          "id": "spec-scene-07",
+          "type": "animation",
+          "path": "assets/remotion_specs/scene-07_spec.json",
+          "source_tool": "remotion_primitives_spec",
+          "scene_id": "scene-07",
+          "cost_usd": 0,
+          "duration_seconds": 4,
+          "format": "json",
+          "quality_score": 0.92,
+          "subtype": "remotion_scene_spec",
+          "generation_summary": "Deterministic Remotion scene specification generated from approved scene plan."
+        },
+        {
+          "id": "spec-scene-08",
+          "type": "animation",
+          "path": "assets/remotion_specs/scene-08_spec.json",
+          "source_tool": "remotion_primitives_spec",
+          "scene_id": "scene-08",
+          "cost_usd": 0,
+          "duration_seconds": 3,
+          "format": "json",
+          "quality_score": 0.92,
+          "subtype": "remotion_scene_spec",
+          "generation_summary": "Deterministic Remotion scene specification generated from approved scene plan."
+        },
+        {
+          "id": "diagram-scene-03",
+          "type": "diagram",
+          "path": "assets/diagrams/scene-03_diagram.png",
+          "source_tool": "diagram_gen",
+          "provider": "mermaid/pillow-fallback",
+          "scene_id": "scene-03",
+          "cost_usd": 0,
+          "resolution": "1600x900",
+          "format": "png",
+          "quality_score": 0.86,
+          "subtype": "pathway_diagram",
+          "generation_summary": "Generated local box/arrow diagram for KHK adaptive ER support with clean professional light theme."
+        },
+        {
+          "id": "diagram-scene-06",
+          "type": "diagram",
+          "path": "assets/diagrams/scene-06_diagram.png",
+          "source_tool": "diagram_gen",
+          "provider": "mermaid/pillow-fallback",
+          "scene_id": "scene-06",
+          "cost_usd": 0,
+          "resolution": "1600x900",
+          "format": "png",
+          "quality_score": 0.86,
+          "subtype": "pathway_diagram",
+          "generation_summary": "Generated local box/arrow diagram for KHK dual role with clean professional light theme."
+        },
+        {
+          "id": "captions-srt",
+          "type": "subtitle",
+          "path": "assets/subtitles/captions.srt",
+          "source_tool": "subtitle_gen_from_script",
+          "scene_id": "global",
+          "cost_usd": 0,
+          "duration_seconds": 63,
+          "format": "srt",
+          "quality_score": 0.95,
+          "subtype": "captions",
+          "generation_summary": "Exact captions generated from the approved timestamped script."
+        },
+        {
+          "id": "narration-delivery",
+          "type": "narration",
+          "path": "assets/metadata/narration_delivery.json",
+          "source_tool": "caption_led_no_tts",
+          "scene_id": "global",
+          "cost_usd": 0,
+          "duration_seconds": 63,
+          "format": "json",
+          "quality_score": 0.8,
+          "subtype": "caption_led",
+          "generation_summary": "Narration delivery metadata; no audio file generated because TTS is unavailable."
+        },
+        {
+          "id": "music-status",
+          "type": "music",
+          "path": "assets/metadata/music_status.json",
+          "source_tool": "music_plan_status",
+          "scene_id": "global",
+          "cost_usd": 0,
+          "format": "json",
+          "quality_score": 0.7,
+          "subtype": "status",
+          "generation_summary": "Music status note; no background music file generated."
+        }
+      ],
+      "total_cost_usd": 0,
+      "metadata": {
+        "project_id": "khk-er-proteostasis-paper",
+        "asset_stage_status": "completed",
+        "total_video_duration_seconds": 63,
+        "assets_generated": 13,
+        "remotion_specs": 8,
+        "diagrams_generated": 2,
+        "subtitles_generated": 1,
+        "narration_status": "caption_led_no_audio_generated",
+        "music_status": "not_generated_no_track_supplied",
+        "tooling_notes": [
+          "No image generation used; scene visuals are Remotion-native specs and local diagrams.",
+          "No TTS used; captions generated from approved script.",
+          "No paid tools used; total cost $0.00."
+        ],
+        "existence_check": "All manifest asset paths exist on disk under projects/khk-er-proteostasis-paper."
+      }
+    }
+  },
+  "style_playbook": "clean-professional",
+  "review": {
+    "decision": "PASS_WITH_WARNINGS",
+    "round": 1,
+    "findings": [
+      {
+        "severity": "suggestion",
+        "title": "No generated narration audio",
+        "description": "No TTS provider is configured, so the asset package uses caption-led narration metadata and exact subtitles instead of audio narration.",
+        "action": "If voiceover is desired, user should supply recorded narration or configure a TTS provider before compose.",
+        "status": "accepted"
+      },
+      {
+        "severity": "suggestion",
+        "title": "No background music file",
+        "description": "The approved proposal listed bring-your-own music, but no track was supplied.",
+        "action": "Proceed silent/caption-led or add a track before final compose.",
+        "status": "accepted"
+      }
+    ],
+    "summary": {
+      "critical": 0,
+      "suggestions": 2,
+      "nitpicks": 0,
+      "success_criteria_met": "All scene-required visual assets and caption assets exist; narration/music limitations are explicit in manifest metadata."
+    }
+  },
+  "cost_snapshot": {
+    "spent_usd": 0,
+    "estimated_remaining_usd": 0,
+    "budget_cap_usd": 0
+  },
+  "metadata": {
+    "next_stage": "edit"
+  }
+}
