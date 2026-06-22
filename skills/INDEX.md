@@ -151,6 +151,16 @@ Stage director skills teach the agent HOW to execute each pipeline stage. Each s
 
 > **Note:** The old `idea-director.md` still exists for reference but is superseded by the research + proposal two-stage flow in v2.0. The talking-head pipeline continues to use its own `idea-director`.
 
+
+### Paper Caption Video Pipeline (`pipelines/paper-caption-video/`) — v1.0
+
+| Skill | File | Stage | Key Capabilities |
+|-------|------|-------|-----------------|
+| Executive Producer | `pipelines/paper-caption-video/executive-producer.md` | `all` | Route committed `.txt` paper inputs to GitHub Actions artifact rendering; no binary MP4 commits |
+| Research Director | `pipelines/paper-caption-video/research-director.md` | `research` | Heuristic title/claim extraction guidance and limitation preservation |
+
+This pipeline is distinct from the KHK project in `pipelines/khk-er-proteostasis-paper/`: KHK is one completed project/checkpoint set, while `paper-caption-video` is the reusable pipeline definition.
+
 ### Talking Head Pipeline (`pipelines/talking-head/`)
 
 | Skill | File | Stage | Key Capabilities |

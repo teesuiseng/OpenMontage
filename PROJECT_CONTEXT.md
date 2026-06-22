@@ -86,6 +86,7 @@ Each tool's `agent_skills[]` field bridges Layer 1 → Layer 3. See `skills/INDE
 |----------|----------|------|
 | `talking-head` | `pipeline_defs/talking-head.yaml` | Footage-based |
 | `animated-explainer` | `pipeline_defs/animated-explainer.yaml` | AI-generated |
+| `paper-caption-video` | `pipeline_defs/paper-caption-video.yaml` | Paper `.txt` → caption video via GitHub Actions artifact |
 | `screen-demo` | `pipeline_defs/screen-demo.yaml` | Screen-recording |
 | `clip-factory` | `pipeline_defs/clip-factory.yaml` | Short-form batch extraction |
 | `podcast-repurpose` | `pipeline_defs/podcast-repurpose.yaml` | Podcast repurposing |
