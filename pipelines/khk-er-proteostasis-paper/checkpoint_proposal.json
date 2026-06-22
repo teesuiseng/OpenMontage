@@ -3,11 +3,11 @@
   "project_id": "khk-er-proteostasis-paper",
   "pipeline_type": "animated-explainer",
   "stage": "proposal",
-  "status": "awaiting_human",
+  "status": "completed",
   "timestamp": "2026-06-22T13:06:03.729699+00:00",
   "checkpoint_policy": "guided",
   "human_approval_required": true,
-  "human_approved": false,
+  "human_approved": true,
   "artifacts": {
     "proposal_packet": {
       "version": "1.0",
@@ -287,8 +287,9 @@
         "savings_options": []
       },
       "approval": {
-        "status": "pending",
-        "approved_budget_usd": 0
+        "status": "approved",
+        "approved_budget_usd": 0,
+        "user_notes": "User asked to continue making the video from the KHK project on 2026-06-22."
       },
       "metadata": {
         "proposal_date": "2026-06-22",
