@@ -42,13 +42,14 @@ class PaperCaptionRender(BaseTool):
     # ffmpeg may be provided by GitHub Actions, system PATH, or an explicit
     # ffmpeg_path input. Keep it out of static dependencies so discovery still
     # works in Codex containers that only have bundled renderer binaries.
-    dependencies = ["python:PIL"]
-    install_instructions = "Install Pillow and FFmpeg. On GitHub Actions: apt-get install ffmpeg; pip install pillow."
+    dependencies = ["python:PIL", "cmd:npx", "node:remotion-composer"]
+    install_instructions = "Install Pillow, FFmpeg, Node.js/npm, and Remotion dependencies. On GitHub Actions: apt-get install ffmpeg; pip install pillow; cd remotion-composer && npm ci."
 
     capabilities = [
         "paper_txt_to_caption_video",
         "github_actions_artifact_render",
         "caption_led_video",
+        "remotion_render",
     ]
     best_for = [
         "Committed .txt paper inputs that need a lightweight caption-led MP4 artifact",
@@ -62,6 +63,7 @@ class PaperCaptionRender(BaseTool):
     supports = {
         "input_extensions": [".txt"],
         "output_format": "mp4",
+        "renderer": "remotion",
         "delivery": "GitHub Actions artifact or local project render",
         "commits_binary_video": False,
     }
