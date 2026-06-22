@@ -1,0 +1,100 @@
+{
+  "version": "1.0",
+  "project_id": "khk-er-proteostasis-paper",
+  "decisions": [
+    {
+      "decision_id": "d-001",
+      "stage": "proposal",
+      "category": "pipeline_selection",
+      "subject": "Video production pipeline",
+      "options_considered": [
+        {
+          "option_id": "animated-explainer",
+          "label": "Animated explainer",
+          "score": 0.9,
+          "reason": "Best fit for turning a scientific paper into diagrams, captions, and concise narration."
+        },
+        {
+          "option_id": "cinematic",
+          "label": "Cinematic trailer",
+          "score": 0.35,
+          "reason": "Would need configured video generation and is less precise for pathway science."
+        },
+        {
+          "option_id": "avatar-spokesperson",
+          "label": "Avatar spokesperson",
+          "score": 0.3,
+          "reason": "Would require avatar/TTS tooling that is unavailable."
+        }
+      ],
+      "selected": "animated-explainer",
+      "reason": "Paper announcement needs accuracy and pathway clarity more than cinematic footage.",
+      "user_visible": true,
+      "user_approved": false,
+      "confidence": 0.9
+    },
+    {
+      "decision_id": "d-002",
+      "stage": "proposal",
+      "category": "render_runtime_selection",
+      "subject": "Render runtime",
+      "options_considered": [
+        {
+          "option_id": "remotion",
+          "label": "Remotion",
+          "score": 0.85,
+          "reason": "Available and strong for React-based scientific scene cards, captions, and diagrams."
+        },
+        {
+          "option_id": "hyperframes",
+          "label": "HyperFrames",
+          "score": 0.2,
+          "reason": "Could be strong for kinetic typography but is unavailable in this environment.",
+          "rejected_because": "runtime not available on this machine"
+        },
+        {
+          "option_id": "ffmpeg",
+          "label": "FFmpeg-only",
+          "score": 0.35,
+          "reason": "Useful for simple stitching but weaker for custom motion-graphics pathway animation."
+        }
+      ],
+      "selected": "remotion",
+      "reason": "Recommended pending user approval because it is available and fits the data-explainer grammar.",
+      "user_visible": true,
+      "user_approved": false,
+      "confidence": 0.85
+    },
+    {
+      "decision_id": "d-003",
+      "stage": "proposal",
+      "category": "concept_selection",
+      "subject": "Recommended concept",
+      "options_considered": [
+        {
+          "option_id": "c1",
+          "label": "The Enzyme With Two Jobs",
+          "score": 0.9,
+          "reason": "Most balanced and surprising for a quick paper announcement."
+        },
+        {
+          "option_id": "c2",
+          "label": "A Liver Cell\u2019s Stress Switch",
+          "score": 0.78,
+          "reason": "Most accessible for general audiences but slightly less focused on novelty."
+        },
+        {
+          "option_id": "c3",
+          "label": "Why Blocking Isn\u2019t Deleting",
+          "score": 0.82,
+          "reason": "Best translational angle but narrower audience."
+        }
+      ],
+      "selected": "c1",
+      "reason": "Recommended pending user approval for widest high-quality impact.",
+      "user_visible": true,
+      "user_approved": false,
+      "confidence": 0.88
+    }
+  ]
+}

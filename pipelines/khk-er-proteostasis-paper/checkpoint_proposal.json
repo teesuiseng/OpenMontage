@@ -1,0 +1,427 @@
+{
+  "version": "1.0",
+  "project_id": "khk-er-proteostasis-paper",
+  "pipeline_type": "animated-explainer",
+  "stage": "proposal",
+  "status": "awaiting_human",
+  "timestamp": "2026-06-22T13:06:03.729699+00:00",
+  "checkpoint_policy": "guided",
+  "human_approval_required": true,
+  "human_approved": false,
+  "artifacts": {
+    "proposal_packet": {
+      "version": "1.0",
+      "concept_options": [
+        {
+          "id": "c1",
+          "title": "The Enzyme With Two Jobs",
+          "hook": "The fructose enzyme blamed for stress may also help liver cells survive it.",
+          "narrative_structure": "myth_busting",
+          "visual_approach": "Clean pathway animation: fructose/fat enters a hepatocyte, KHK lights up, the screen splits into adaptive IRE1\u03b1-XBP1 versus apoptotic PERK-CHOP outcomes.",
+          "suggested_playbook": "clean-professional",
+          "target_audience": "Scientific colleagues, liver/metabolism researchers, and LinkedIn/X science followers",
+          "target_platform": "linkedin",
+          "target_duration_seconds": 60,
+          "key_points": [
+            "KHK rises during fructose-and-fat nutrient stress.",
+            "KHK aligns with adaptive IRE1\u03b1-XBP1 signaling across cell, mouse, and human data.",
+            "KHK knockdown shifts cells toward proteotoxic stress and apoptosis.",
+            "Therapeutic strategies may need selective enzymatic inhibition rather than complete loss."
+          ],
+          "core_message": "KHK is not just a fructose enzyme; it is also part of a liver-cell stress adaptation system.",
+          "cta": "Read the open-access article: doi.org/10.1152/ajpgi.00235.2025",
+          "tone": "Accessible, polished, scientifically precise",
+          "grounded_in": [
+            "angle:The Enzyme With Two Jobs",
+            "data_points[1-3]"
+          ],
+          "why_this_works": "It leads with the paper\u2019s surprising paradox, which is more memorable than a standard methods/results summary."
+        },
+        {
+          "id": "c2",
+          "title": "A Liver Cell\u2019s Stress Switch",
+          "hook": "When nutrients overload the ER, liver cells must choose: adapt or die.",
+          "narrative_structure": "journey",
+          "visual_approach": "A hepatocyte as a tiny factory under overload: packages pile up in the ER, KHK helps route stress to adaptive folding support, and KHK loss tips the factory into alarm/apoptosis.",
+          "suggested_playbook": "minimalist-diagram",
+          "target_audience": "General science audience and students who need the pathway explained visually",
+          "target_platform": "generic",
+          "target_duration_seconds": 75,
+          "key_points": [
+            "Fructose plus saturated fat creates a nutrient-overload model.",
+            "The ER responds through UPR branches.",
+            "KHK supports adaptive XBP1 signaling.",
+            "Without KHK, protein aggregates and apoptotic signals rise."
+          ],
+          "core_message": "The discovery is about cellular fate: KHK helps hepatocytes resolve stress instead of collapsing into apoptosis.",
+          "cta": "Share with colleagues studying MASLD, MASH, ER stress, or nutrient signaling.",
+          "tone": "Educational, analogy-driven, less jargon-heavy",
+          "grounded_in": [
+            "angle:A Liver Cell\u2019s Stress Switch",
+            "visual_references[0]"
+          ],
+          "why_this_works": "It turns abstract pathway acronyms into a relatable factory-stress story, making it accessible beyond specialists."
+        },
+        {
+          "id": "c3",
+          "title": "Why Blocking Isn\u2019t Deleting",
+          "hook": "A drug target can be useful\u2014and dangerous to erase completely.",
+          "narrative_structure": "problem_solution",
+          "visual_approach": "Therapeutic decision board: \u201creduce fructose flux\u201d versus \u201cpreserve ER protection,\u201d ending on selective enzymatic inhibition as the nuanced takeaway.",
+          "suggested_playbook": "clean-professional",
+          "target_audience": "Translational researchers, clinicians, drug-development audience, funders",
+          "target_platform": "linkedin",
+          "target_duration_seconds": 60,
+          "key_points": [
+            "KHK contributes to steatosis through fructose metabolism.",
+            "Complete KHK loss disrupts ER proteostasis.",
+            "The study argues for separating enzymatic activity from protective protein function."
+          ],
+          "core_message": "The therapeutic lesson is precision: inhibit the harmful activity without losing the adaptive stress-protection role.",
+          "cta": "Use this paper to rethink KHK-targeted approaches in MASLD/MASH.",
+          "tone": "Translational, strategic, funder-friendly",
+          "grounded_in": [
+            "angle:Why Blocking Isn\u2019t Deleting",
+            "misconceptions[1]"
+          ],
+          "why_this_works": "It foregrounds the clinical implication and makes the work feel relevant to therapy design rather than only cell biology."
+        }
+      ],
+      "selected_concept": {
+        "concept_id": "c1",
+        "rationale": "Agent recommendation pending user approval: c1 is the most balanced quick video because it is surprising, accurate, and works for both scientific and professional social audiences.",
+        "modifications": []
+      },
+      "production_plan": {
+        "pipeline": "animated-explainer",
+        "playbook": "clean-professional",
+        "renderer_family": "explainer-data",
+        "render_runtime": "remotion",
+        "stages": [
+          {
+            "stage": "script",
+            "tools": [],
+            "approach": "Write a 60-second narration and on-screen caption script around the KHK paradox."
+          },
+          {
+            "stage": "scene_plan",
+            "tools": [],
+            "approach": "Plan 6-8 motion-graphic scenes using diagram cards, pathway arrows, and split-screen stress outcomes."
+          },
+          {
+            "stage": "assets",
+            "tools": [
+              {
+                "tool_name": "diagram_gen",
+                "role": "Create pathway-style Mermaid/SVG diagrams",
+                "provider": "mermaid",
+                "available": true,
+                "estimated_cost_usd": 0,
+                "why_this_provider": "Available locally and well-suited for pathway diagrams."
+              },
+              {
+                "tool_name": "image_selector",
+                "role": "AI/stock images if configured",
+                "provider": "multi",
+                "available": false,
+                "estimated_cost_usd": 0,
+                "why_this_provider": "No image-generation providers are configured, so the plan avoids paid/generated images."
+              },
+              {
+                "tool_name": "tts_selector",
+                "role": "Narration generation",
+                "provider": "multi",
+                "available": false,
+                "estimated_cost_usd": 0,
+                "why_this_provider": "No TTS provider is configured; user can record voiceover or approve caption-led delivery."
+              },
+              {
+                "tool_name": "pixabay_music",
+                "role": "Optional background music search",
+                "provider": "pixabay_music",
+                "available": true,
+                "estimated_cost_usd": 0,
+                "why_this_provider": "Available configured music-search source."
+              }
+            ],
+            "approach": "Build diagram-first assets from the supplied article text and DOI; use user-provided figures only if supplied/approved."
+          },
+          {
+            "stage": "edit",
+            "tools": [],
+            "approach": "Assemble timing, captions, transitions, and optional music ducking plan."
+          },
+          {
+            "stage": "compose",
+            "tools": [
+              {
+                "tool_name": "video_compose",
+                "role": "Render the final motion-graphic video",
+                "provider": "remotion",
+                "available": true,
+                "estimated_cost_usd": 0,
+                "why_this_provider": "Remotion is available and best fits data cards, captions, and pathway animation."
+              },
+              {
+                "tool_name": "hyperframes_compose",
+                "role": "Alternative HTML/GSAP render runtime",
+                "provider": "hyperframes",
+                "available": false,
+                "estimated_cost_usd": 0,
+                "why_this_provider": "Not selected because HyperFrames is unavailable in this environment."
+              }
+            ],
+            "approach": "Render a 1080p vertical or square LinkedIn-ready video after runtime approval."
+          }
+        ],
+        "quality_tradeoffs": [
+          {
+            "tradeoff": "Voiceover versus caption-led silent video",
+            "recommendation": "Use your recorded voice for credibility if possible; otherwise proceed caption-led.",
+            "quality_impact": "A real author voice increases trust and shareability, while caption-led is fastest."
+          },
+          {
+            "tradeoff": "Use article figures versus simplified diagrams",
+            "recommendation": "Use simplified animated diagrams unless you provide figure image files.",
+            "quality_impact": "Simplified diagrams are clearer on mobile; paper figures add authenticity but may be visually dense."
+          }
+        ],
+        "alternative_paths": [
+          {
+            "description": "Author-voice Remotion explainer with diagrams and captions",
+            "total_cost_usd": 0,
+            "quality_level": "standard",
+            "what_changes": "Requires user-recorded narration audio."
+          },
+          {
+            "description": "Caption-led Remotion explainer with optional music",
+            "total_cost_usd": 0,
+            "quality_level": "budget",
+            "what_changes": "Fastest path; no generated narration."
+          },
+          {
+            "description": "Premium AI visuals/TTS path after configuring providers",
+            "total_cost_usd": 1.0,
+            "quality_level": "premium",
+            "what_changes": "Unlocks AI images and polished TTS; requires API keys."
+          }
+        ],
+        "delivery_promise": {
+          "promise_type": "data_explainer",
+          "motion_required": false,
+          "source_required": false,
+          "tone_mode": "educational professional",
+          "quality_floor": "presentable",
+          "approved_fallback": null
+        },
+        "music_source": {
+          "source_type": "bring_your_own",
+          "mood_direction": "subtle scientific ambient, low-energy, non-distracting",
+          "estimated_cost_usd": 0
+        },
+        "voice_selection": {
+          "provider": "user_recorded_or_caption_led",
+          "voice_id": "pending",
+          "rationale": "No configured TTS provider is available; author-recorded voice is preferable for a paper announcement.",
+          "estimated_cost_usd": 0
+        },
+        "decision_log_ref": "pipelines/khk-er-proteostasis-paper/decision_log.json",
+        "provider_rankings": {
+          "tts": [
+            {
+              "tool_name": "user_recorded",
+              "provider": "user",
+              "weighted_score": 0.85,
+              "task_fit": 0.9,
+              "output_quality": 0.8,
+              "explanation": "Best credibility for a scientific paper announcement."
+            },
+            {
+              "tool_name": "caption_led",
+              "provider": "openmontage",
+              "weighted_score": 0.65,
+              "task_fit": 0.7,
+              "output_quality": 0.6,
+              "explanation": "Fastest available fallback because TTS is unavailable."
+            }
+          ],
+          "music": [
+            {
+              "tool_name": "pixabay_music",
+              "provider": "pixabay_music",
+              "weighted_score": 0.7,
+              "task_fit": 0.7,
+              "output_quality": 0.6,
+              "explanation": "Available music search; suitable for subtle background only."
+            }
+          ]
+        }
+      },
+      "cost_estimate": {
+        "total_estimated_usd": 0,
+        "line_items": [
+          {
+            "tool": "diagram_gen",
+            "operation": "Create local pathway diagrams",
+            "quantity": 2,
+            "estimated_usd": 0,
+            "notes": "Local Mermaid/SVG diagrams."
+          },
+          {
+            "tool": "video_compose",
+            "operation": "Render Remotion video",
+            "quantity": 1,
+            "estimated_usd": 0,
+            "notes": "Local render path."
+          },
+          {
+            "tool": "pixabay_music",
+            "operation": "Optional background music search",
+            "quantity": 1,
+            "estimated_usd": 0,
+            "notes": "Only if you want music."
+          }
+        ],
+        "budget_cap_usd": 2.0,
+        "budget_verdict": "within_budget",
+        "savings_options": []
+      },
+      "approval": {
+        "status": "pending",
+        "approved_budget_usd": 0
+      },
+      "metadata": {
+        "proposal_date": "2026-06-22",
+        "preflight_status": "degraded: Remotion available; HyperFrames, TTS, image generation, and video generation unavailable."
+      }
+    },
+    "decision_log": {
+      "version": "1.0",
+      "project_id": "khk-er-proteostasis-paper",
+      "decisions": [
+        {
+          "decision_id": "d-001",
+          "stage": "proposal",
+          "category": "pipeline_selection",
+          "subject": "Video production pipeline",
+          "options_considered": [
+            {
+              "option_id": "animated-explainer",
+              "label": "Animated explainer",
+              "score": 0.9,
+              "reason": "Best fit for turning a scientific paper into diagrams, captions, and concise narration."
+            },
+            {
+              "option_id": "cinematic",
+              "label": "Cinematic trailer",
+              "score": 0.35,
+              "reason": "Would need configured video generation and is less precise for pathway science."
+            },
+            {
+              "option_id": "avatar-spokesperson",
+              "label": "Avatar spokesperson",
+              "score": 0.3,
+              "reason": "Would require avatar/TTS tooling that is unavailable."
+            }
+          ],
+          "selected": "animated-explainer",
+          "reason": "Paper announcement needs accuracy and pathway clarity more than cinematic footage.",
+          "user_visible": true,
+          "user_approved": false,
+          "confidence": 0.9
+        },
+        {
+          "decision_id": "d-002",
+          "stage": "proposal",
+          "category": "render_runtime_selection",
+          "subject": "Render runtime",
+          "options_considered": [
+            {
+              "option_id": "remotion",
+              "label": "Remotion",
+              "score": 0.85,
+              "reason": "Available and strong for React-based scientific scene cards, captions, and diagrams."
+            },
+            {
+              "option_id": "hyperframes",
+              "label": "HyperFrames",
+              "score": 0.2,
+              "reason": "Could be strong for kinetic typography but is unavailable in this environment.",
+              "rejected_because": "runtime not available on this machine"
+            },
+            {
+              "option_id": "ffmpeg",
+              "label": "FFmpeg-only",
+              "score": 0.35,
+              "reason": "Useful for simple stitching but weaker for custom motion-graphics pathway animation."
+            }
+          ],
+          "selected": "remotion",
+          "reason": "Recommended pending user approval because it is available and fits the data-explainer grammar.",
+          "user_visible": true,
+          "user_approved": false,
+          "confidence": 0.85
+        },
+        {
+          "decision_id": "d-003",
+          "stage": "proposal",
+          "category": "concept_selection",
+          "subject": "Recommended concept",
+          "options_considered": [
+            {
+              "option_id": "c1",
+              "label": "The Enzyme With Two Jobs",
+              "score": 0.9,
+              "reason": "Most balanced and surprising for a quick paper announcement."
+            },
+            {
+              "option_id": "c2",
+              "label": "A Liver Cell\u2019s Stress Switch",
+              "score": 0.78,
+              "reason": "Most accessible for general audiences but slightly less focused on novelty."
+            },
+            {
+              "option_id": "c3",
+              "label": "Why Blocking Isn\u2019t Deleting",
+              "score": 0.82,
+              "reason": "Best translational angle but narrower audience."
+            }
+          ],
+          "selected": "c1",
+          "reason": "Recommended pending user approval for widest high-quality impact.",
+          "user_visible": true,
+          "user_approved": false,
+          "confidence": 0.88
+        }
+      ]
+    }
+  },
+  "style_playbook": "clean-professional",
+  "review": {
+    "decision": "PASS",
+    "round": 1,
+    "findings": [
+      {
+        "severity": "suggestion",
+        "title": "Runtime requires user approval",
+        "description": "Remotion is recommended because HyperFrames is unavailable, but the user still must approve render path before production.",
+        "action": "Ask user to approve Remotion or choose FFmpeg-only fallback.",
+        "status": "pending"
+      }
+    ],
+    "summary": {
+      "critical": 0,
+      "suggestions": 1,
+      "nitpicks": 0,
+      "success_criteria_met": "proposal packet prepared; approval pending"
+    }
+  },
+  "cost_snapshot": {
+    "spent_usd": 0,
+    "estimated_remaining_usd": 0,
+    "budget_cap_usd": 2
+  },
+  "metadata": {
+    "awaiting": "concept, runtime, voice/music approval"
+  }
+}
