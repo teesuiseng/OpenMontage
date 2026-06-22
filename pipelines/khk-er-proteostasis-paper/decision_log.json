@@ -30,7 +30,7 @@
       "selected": "animated-explainer",
       "reason": "Paper announcement needs accuracy and pathway clarity more than cinematic footage.",
       "user_visible": true,
-      "user_approved": false,
+      "user_approved": true,
       "confidence": 0.9
     },
     {
@@ -62,7 +62,7 @@
       "selected": "remotion",
       "reason": "Recommended pending user approval because it is available and fits the data-explainer grammar.",
       "user_visible": true,
-      "user_approved": false,
+      "user_approved": true,
       "confidence": 0.85
     },
     {
@@ -93,8 +93,33 @@
       "selected": "c1",
       "reason": "Recommended pending user approval for widest high-quality impact.",
       "user_visible": true,
-      "user_approved": false,
+      "user_approved": true,
       "confidence": 0.88
+    },
+    {
+      "decision_id": "d-004",
+      "stage": "compose",
+      "category": "fallback_decision",
+      "subject": "Render execution after Remotion browser download failed",
+      "options_considered": [
+        {
+          "option_id": "remotion-render",
+          "label": "Remotion render",
+          "score": 0.85,
+          "reason": "Approved runtime, but blocked because no local Chrome/Chromium exists and DNS could not resolve remotion.media to download headless Chrome."
+        },
+        {
+          "option_id": "local-ffmpeg-frame-render",
+          "label": "Local FFmpeg frame render",
+          "score": 0.7,
+          "reason": "Available through bundled Remotion compositor FFmpeg and can produce the requested video without paid providers or more approval steps."
+        }
+      ],
+      "selected": "local-ffmpeg-frame-render",
+      "reason": "User explicitly requested making the video without additional human-in-loop steps; local encoder fallback produced the deliverable when Remotion could not start.",
+      "user_visible": true,
+      "user_approved": true,
+      "confidence": 0.72
     }
   ]
 }
