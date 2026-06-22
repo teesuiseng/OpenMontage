@@ -81,6 +81,7 @@ stages:
     success_criteria:
       - Schema-valid script with timed sections
       - Total duration matches requested duration
+      - LinkedIn story quality gate passes before render
 
   - name: scene_plan
     skill: pipelines/explainer/scene-director
