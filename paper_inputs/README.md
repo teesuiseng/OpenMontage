@@ -10,6 +10,11 @@ paper_inputs/example-paper.txt
 
 The workflow input `paper_txt_path` should point to the committed text file.
 
+## First step: create a pipeline-ready `.txt`
+
+If you are starting from a paper, abstract, or notes, use [`PAPER_TXT_PROMPT.md`](PAPER_TXT_PROMPT.md) to convert the source into the short structured `.txt` format that the renderer expects.
+
+
 ## GitHub workflow
 
 1. Commit or upload a `.txt` paper into `paper_inputs/`.
