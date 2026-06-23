@@ -42,16 +42,6 @@ KEYWORDS = (
     "reveals", "associated", "significant", "mechanism", "model", "clinical",
 )
 
-LINKEDIN_SECTION_PRIORITIES = (
-    ("setup", ("background", "question", "what the paper asks")),
-    ("finding", ("impairs", "inhibits", "differentiation", "adipogenesis", "main finding")),
-    ("finding", ("resistance", "t3", "resmetirom", "thyroid hormone")),
-    ("finding", ("mechanism", "dysregulation", "ubiquitin", "degradation")),
-    ("finding", ("overexpression", "rescue", "transcriptional")),
-    ("finding", ("secretome", "proteomics", "redox", "proteostasis")),
-    ("takeaway", ("significance", "conclusion", "implications")),
-)
-
 
 def font_path(name: str) -> str:
     candidates = [
@@ -86,7 +76,10 @@ def extract_title(lines: list[str], fallback: str) -> str:
     for line in lines[:25]:
         stripped = line.strip()
         stripped = re.sub(r"^summary\s+of\s+key\s+findings:\s*", "", stripped, flags=re.I)
-        if 12 <= len(stripped) <= 140 and not stripped.lower().startswith(("abstract", "introduction", "doi")):
+        lower = stripped.lower().rstrip(":")
+        if lower in {"title", "paper title"}:
+            continue
+        if 12 <= len(stripped) <= 140 and not lower.startswith(("abstract", "introduction", "doi")):
             return stripped
     return fallback
 
@@ -137,6 +130,7 @@ def is_section_heading(line: str) -> bool:
         return True
     lower = stripped.lower()
     if lower in {
+        "title",
         "background",
         "main findings",
         "proposed mechanism",
@@ -144,6 +138,12 @@ def is_section_heading(line: str) -> bool:
         "significance",
         "limitations",
     }:
+        return True
+    if (
+        8 <= len(stripped) <= 96
+        and not re.search(r"[.!?;:]$", stripped)
+        and sum(1 for word in stripped.split() if word[:1].isupper() or word.isupper()) >= 2
+    ):
         return True
     return False
 
@@ -223,12 +223,19 @@ def pick_section(
     return best[1], best[2]
 
 
+def is_heading_like(value: str, keywords: tuple[str, ...]) -> bool:
+    haystack = value.lower()
+    return any(keyword in haystack for keyword in keywords)
+
+
+def first_sentence_fragment(text: str, limit: int = 56) -> str:
+    fragment = re.split(r"(?<=[.!?])\s+", text.strip(), maxsplit=1)[0]
+    fragment = re.sub(r"^\W+", "", fragment)
+    return fit_caption(fragment or "Evidence from source text", limit)
+
+
 def build_linkedin_scenes(lines: list[str], title: str, paper_path: Path) -> list[dict[str, str]]:
     sections = extract_structured_sections(lines)
-    usable_sections = [
-        section for section in sections
-        if str(section.get("heading", "")).lower() not in {"main findings", "overview"}
-    ]
     used: set[int] = set()
 
     scenes: list[dict[str, str]] = [
@@ -239,36 +246,105 @@ def build_linkedin_scenes(lines: list[str], title: str, paper_path: Path) -> lis
         }
     ]
 
-    for kind, keywords in LINKEDIN_SECTION_PRIORITIES:
-        finding_count = len([scene for scene in scenes if scene["kind"] == "finding"])
-        if kind == "finding" and finding_count >= 3:
+    setup_keywords = ("background", "abstract", "introduction", "question", "objective", "purpose")
+    takeaway_keywords = (
+        "significance",
+        "conclusion",
+        "implication",
+        "takeaway",
+        "discussion",
+        "relevance",
+    )
+    container_headings = {"title", "main findings", "findings", "results", "overview"}
+    non_finding_headings = {
+        "title",
+        "background",
+        "abstract",
+        "introduction",
+        "question",
+        "objective",
+        "purpose",
+        "significance",
+        "conclusions",
+        "conclusion",
+        "limitations",
+        "discussion",
+    }
+
+    setup = pick_section(sections, setup_keywords, used)
+    if setup is not None:
+        _, section = setup
+        body = section_body(section)
+        if body:
+            scenes.append({"kind": "setup", "heading": "The question", "body": fit_caption(body)})
+
+    takeaway: tuple[int, dict[str, list[str] | str]] | None = pick_section(sections, takeaway_keywords, used)
+
+    finding_candidates: list[tuple[int, dict[str, list[str] | str]]] = []
+    for index, section in enumerate(sections):
+        if index in used:
             continue
-        picked = pick_section(usable_sections, keywords, used)
-        if picked is None:
-            continue
-        _, section = picked
-        heading = title_case_heading(str(section["heading"]))
+        heading = str(section.get("heading", "")).strip()
         body = section_body(section)
         if not body:
             continue
-        if kind == "setup":
-            heading = "The question"
-        elif kind == "takeaway":
-            heading = "Why LinkedIn readers should care"
-        scenes.append({
-            "kind": kind,
-            "heading": fit_caption(heading, 56),
-            "body": fit_caption(body),
-        })
-        if len([scene for scene in scenes if scene["kind"] == "finding"]) >= 3 and any(scene["kind"] == "takeaway" for scene in scenes):
-            break
+        lower = heading.lower()
+        if lower in container_headings:
+            continue
+        if lower in non_finding_headings or is_heading_like(lower, setup_keywords + takeaway_keywords):
+            continue
+        finding_candidates.append((index, section))
 
-    if len(scenes) < 5:
-        beats = extract_beats("\n".join(lines), title, max_beats=4)
-        for i, beat in enumerate(beats, start=1):
-            scenes.append({"kind": "finding", "heading": f"Key point {i}", "body": fit_caption(beat)})
-            if len(scenes) >= 5:
+    if len(finding_candidates) < 3:
+        for index, section in enumerate(sections):
+            if index in used or any(candidate_index == index for candidate_index, _ in finding_candidates):
+                continue
+            heading = str(section.get("heading", "")).strip()
+            body = section_body(section)
+            if body and heading.lower() not in container_headings:
+                finding_candidates.append((index, section))
+            if len(finding_candidates) >= 3:
                 break
+
+    for index, section in finding_candidates[:3]:
+        used.add(index)
+        heading = title_case_heading(str(section["heading"]))
+        body = section_body(section)
+        scenes.append({"kind": "finding", "heading": fit_caption(heading, 56), "body": fit_caption(body)})
+
+    if takeaway is not None:
+        _, section = takeaway
+        body = section_body(section)
+        if body:
+            scenes.append({
+                "kind": "takeaway",
+                "heading": "Why LinkedIn readers should care",
+                "body": fit_caption(body),
+            })
+
+    beats = extract_beats("\n".join(lines), title, max_beats=6)
+    if "setup" not in [scene["kind"] for scene in scenes] and beats:
+        scenes.insert(1, {"kind": "setup", "heading": "The question", "body": fit_caption(beats[0])})
+
+    beat_index = 0
+    while len([scene for scene in scenes if scene["kind"] == "finding"]) < 3 and beat_index < len(beats):
+        beat = beats[beat_index]
+        beat_index += 1
+        if any(beat[:80] in scene["body"] for scene in scenes):
+            continue
+        scenes.append({
+            "kind": "finding",
+            "heading": first_sentence_fragment(beat),
+            "body": fit_caption(beat),
+        })
+
+    if "takeaway" not in [scene["kind"] for scene in scenes]:
+        takeaway_body = beats[-1] if beats else "Use this as a fast paper triage, then verify the full source before posting."
+        scenes.append({
+            "kind": "takeaway",
+            "heading": "Why LinkedIn readers should care",
+            "body": fit_caption(takeaway_body),
+        })
 
     scenes.append({
         "kind": "limitations",
